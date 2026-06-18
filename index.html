@@ -3,150 +3,272 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>白黒オルカ 公式サイト</title>
+<title>白黒オルカ | Official Website</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+scroll-behavior:smooth;
 }
 
 body{
-font-family:"Yu Gothic",sans-serif;
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
-url("https://images.unsplash.com/photo-1551244072-5d12893278ab?auto=format&fit=crop&w=1600&q=80");
-background-size:cover;
-background-attachment:fixed;
+font-family:'Noto Sans JP',sans-serif;
+background:#020812;
 color:white;
-line-height:1.8;
+overflow-x:hidden;
 }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
+/* 深海背景 */
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(0,20,40,.7),rgba(0,5,15,.95)),
+url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000");
+background-size:cover;
+background-position:center;
+z-index:-2;
 }
+
+body::after{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at top,#38bdf8 0%,transparent 40%);
+opacity:.25;
+z-index:-1;
+}
+
+/* HEADER */
 
 header{
+position:fixed;
+top:0;
+width:100%;
+height:80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 40px;
+background:rgba(0,0,0,.35);
+backdrop-filter:blur(15px);
+z-index:999;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+height:55px;
+}
+
+.logo h2{
+font-size:1.2rem;
+font-weight:700;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:.9rem;
+letter-spacing:1px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#5dd9ff;
+}
+
+/* HERO */
+
+.hero{
 min-height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
+padding:120px 8%;
 }
 
-.hero{
-backdrop-filter:blur(10px);
-background:rgba(0,0,0,.4);
-padding:40px;
-border-radius:30px;
+.hero-left{
+width:50%;
 }
 
-.logo{
-width:220px;
+.hero-left h1{
+font-size:6rem;
+line-height:0.9;
+font-weight:700;
+text-shadow:0 0 30px #4fcfff;
+}
+
+.hero-left h1 span{
+font-size:2.2rem;
+display:block;
+letter-spacing:12px;
 margin-bottom:20px;
 }
 
-.orca{
-width:350px;
-max-width:90%;
-margin:20px 0;
-filter:drop-shadow(0 0 20px #00d5ff);
-}
-
-h1{
-font-size:4rem;
-margin-bottom:10px;
-}
-
 .catch{
-font-size:1.3rem;
-color:#9ee8ff;
+font-size:1.8rem;
+margin:30px 0;
 }
+
+.sub{
+letter-spacing:8px;
+color:#6edfff;
+margin-bottom:40px;
+}
+
+.hero-right{
+width:50%;
+text-align:center;
+}
+
+.hero-right img{
+height:850px;
+max-height:85vh;
+filter:drop-shadow(0 0 40px #0099ff);
+}
+
+/* SNS */
 
 .sns{
-margin-top:30px;
 display:flex;
-flex-wrap:wrap;
-justify-content:center;
 gap:15px;
+flex-wrap:wrap;
 }
 
 .sns a{
+padding:15px 25px;
+border-radius:15px;
+background:rgba(0,150,255,.12);
+backdrop-filter:blur(10px);
+border:1px solid rgba(120,220,255,.3);
+color:white;
 text-decoration:none;
-padding:12px 22px;
-border-radius:999px;
-background:#00cfff;
-color:black;
-font-weight:bold;
 transition:.3s;
 }
 
 .sns a:hover{
-transform:translateY(-3px);
+transform:translateY(-4px);
+box-shadow:0 0 20px #22cfff;
 }
 
+/* SECTION */
+
 section{
-padding:80px 0;
+padding:100px 8%;
+}
+
+.section-title{
+font-size:2.5rem;
+margin-bottom:30px;
+color:#79e4ff;
 }
 
 .card{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(10px);
-padding:30px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
 border-radius:25px;
-margin-top:20px;
+padding:35px;
 }
 
-h2{
-font-size:2rem;
-margin-bottom:20px;
-color:#7fe7ff;
-}
+/* PROFILE */
 
 .profile-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(2,1fr);
 gap:20px;
 }
 
 .item{
-background:rgba(255,255,255,.05);
 padding:20px;
+background:rgba(255,255,255,.04);
 border-radius:15px;
 }
 
-.fanmark{
-font-size:2rem;
+/* FAN */
+
+.fan{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+text-align:center;
 }
+
+.fan-box{
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.04);
+}
+
+/* FOOTER */
 
 footer{
+padding:60px;
 text-align:center;
-padding:50px 20px;
-color:#aaa;
+color:#999;
 }
 
-@media(max-width:768px){
+/* スマホ */
 
-h1{
-font-size:2.5rem;
+@media(max-width:1000px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-left,
+.hero-right{
+width:100%;
+}
+
+.hero-left h1{
+font-size:4rem;
+}
+
+.hero-right img{
+height:auto;
+width:90%;
 }
 
 .profile-grid{
 grid-template-columns:1fr;
 }
 
-.logo{
-width:160px;
+.fan{
+grid-template-columns:1fr;
 }
 
-.orca{
-width:260px;
+header{
+padding:0 15px;
+}
+
+nav{
+display:none;
 }
 
 }
+
 </style>
 </head>
 
@@ -154,64 +276,76 @@ width:260px;
 
 <header>
 
-<div class="hero">
-
-<img src="assets/logo.png" class="logo">
-
-<h1>白黒オルカ</h1>
-
-<p class="catch">
-人間になりたいただのシャチ
-</p>
-
-<img src="assets/orca.png" class="orca">
-
-<div class="sns">
-
-<a href="https://web.iriam.app/s/user/uzA1OhNF3G?uuid=45efcd5b" target="_blank">IRIAM</a>
-
-<a href="https://x.com/orca_whiteblack" target="_blank">X</a>
-
-<a href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank">YouTube</a>
-
-<a href="https://www.tiktok.com/@orca_white.black" target="_blank">TikTok</a>
-
-<a href="https://suzuri.jp/orca_White_Black" target="_blank">GOODS</a>
-
+<div class="logo">
+<img src="assets/logo.png">
+<h2>SHIROKURO ORCA</h2>
 </div>
 
-</div>
+<nav>
+<a href="#profile">PROFILE</a>
+<a href="#community">COMMUNITY</a>
+<a href="#goods">GOODS</a>
+</nav>
 
 </header>
 
-<div class="container">
+<section class="hero">
 
-<section>
+<div class="hero-left">
 
-<h2>PROFILE</h2>
+<h1>
+<span>SHIROKURO</span>
+ORCA
+</h1>
+
+<div class="catch">
+人間になりたいただのシャチ
+</div>
+
+<div class="sub">
+DEEP SEA STREAMING BASE
+</div>
+
+<div class="sns">
+
+<a href="https://x.com/orca_whiteblack">X</a>
+
+<a href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ">YouTube</a>
+
+<a href="https://suzuri.jp/orca_White_Black">GOODS</a>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+<img src="assets/orca.png">
+</div>
+
+</section>
+
+<section id="profile">
+
+<h2 class="section-title">PROFILE</h2>
 
 <div class="card">
 
 <div class="profile-grid">
 
 <div class="item">
-<strong>誕生日</strong><br>
-10/29
+誕生日<br><strong>10 / 29</strong>
 </div>
 
 <div class="item">
-<strong>好きなもの</strong><br>
-たこやき
+好きなもの<br><strong>たこやき</strong>
 </div>
 
 <div class="item">
-<strong>趣味</strong><br>
-おしゃべり・ゲーム・寝ること
+趣味<br><strong>おしゃべり・ゲーム・寝ること</strong>
 </div>
 
 <div class="item">
-<strong>配信内容</strong><br>
-雑談・ゲーム配信
+配信内容<br><strong>雑談・ゲーム配信</strong>
 </div>
 
 </div>
@@ -220,57 +354,58 @@ width:260px;
 
 </section>
 
-<section>
+<section id="community">
 
-<h2>FAN COMMUNITY</h2>
+<h2 class="section-title">FAN COMMUNITY</h2>
 
-<div class="card">
+<div class="fan">
 
-<p class="fanmark">🤍∞🖤</p>
+<div class="fan-box">
+🤍∞🖤<br>
+ファンマーク
+</div>
 
-<br>
+<div class="fan-box">
+オルカの飼育員さん<br>
+ファンネーム
+</div>
 
-<p>
-<strong>ファンネーム</strong><br>
-オルカの飼育員さん
-</p>
-
-<br>
-
-<p>
-<strong>ファンアートタグ</strong><br>
-#おるかあーと
-</p>
+<div class="fan-box">
+#おるかあーと<br>
+ファンアートタグ
+</div>
 
 </div>
 
 </section>
 
-<section>
+<section id="goods">
 
-<h2>GOODS</h2>
+<h2 class="section-title">OFFICIAL GOODS</h2>
 
 <div class="card">
 
+<h3>白黒オルカ公式グッズ</h3>
+
+<br>
+
 <p>
-白黒オルカ公式グッズはこちらから！
+SUZURIにて販売中
 </p>
 
 <br>
 
-<a href="https://suzuri.jp/orca_White_Black" target="_blank">
-SUZURIショップへ
+<a href="https://suzuri.jp/orca_White_Black" style="color:#79e4ff;">
+ショップを見る →
 </a>
 
 </div>
 
 </section>
 
-</div>
-
 <footer>
 
-© SHIROKURO ORCA
+© 2026 SHIROKURO ORCA
 
 </footer>
 
