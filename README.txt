@@ -1,1 +1,1 @@
-Enterprise V6: 深海背景・リンクロゴ・衣装切替演出強化。ZIPの中身だけをGitHub直下にアップロードしてください。
+V7 Gallery Fixed: assets/gallery に今回のミニキャラ9枚を同梱。data/gallery.jsonも更新済み。ZIPの中身だけをGitHub直下にアップロードしてください。

@@ -102,3 +102,134 @@ setInterval(addJelly, 5200);
     });
   });
 })();
+
+
+// ===== V7 VTUBER GALLERY / TITLELESS =====
+loadJSON('data/gallery.json', []).then(items => {
+  const grid = document.getElementById('galleryGrid');
+  if(!grid) return;
+  grid.innerHTML = items.map((g, i) => `
+    <button class="gallery-card titleless" data-index="${i}" type="button">
+      <img src="${g.src}" alt="">
+      <span>🔍</span>
+    </button>
+  `).join('');
+
+  window.__orcaGalleryItems = items;
+});
+
+// Better gallery lightbox with left/right
+(() => {
+  if(document.querySelector('.orca-lightbox')) return;
+  const lb = document.createElement('div');
+  lb.className = 'orca-lightbox';
+  lb.innerHTML = `
+    <button class="lb-close" type="button">×</button>
+    <button class="lb-prev" type="button">‹</button>
+    <img alt="">
+    <button class="lb-next" type="button">›</button>
+  `;
+  document.body.appendChild(lb);
+
+  let index = 0;
+  const img = lb.querySelector('img');
+  const show = (i) => {
+    const items = window.__orcaGalleryItems || [];
+    if(!items.length) return;
+    index = (i + items.length) % items.length;
+    img.src = items[index].src;
+    lb.classList.add('open');
+  };
+
+  document.addEventListener('click', e => {
+    const card = e.target.closest('.gallery-card');
+    if(card && card.dataset.index !== undefined){
+      show(Number(card.dataset.index));
+    }
+  });
+  lb.querySelector('.lb-close').addEventListener('click', () => lb.classList.remove('open'));
+  lb.querySelector('.lb-prev').addEventListener('click', () => show(index - 1));
+  lb.querySelector('.lb-next').addEventListener('click', () => show(index + 1));
+  lb.addEventListener('click', e => { if(e.target === lb) lb.classList.remove('open'); });
+  document.addEventListener('keydown', e => {
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') lb.classList.remove('open');
+    if(e.key === 'ArrowLeft') show(index - 1);
+    if(e.key === 'ArrowRight') show(index + 1);
+  });
+})();
+
+
+// ===== GALLERY FIXED / TITLELESS LIGHTBOX =====
+async function orcaLoadGalleryFixed(){
+  const grid = document.getElementById('galleryGrid');
+  if(!grid) return;
+
+  let items = [];
+  try{
+    const res = await fetch('data/gallery.json', {cache:'no-store'});
+    items = await res.json();
+  }catch(e){
+    items = [
+      {src:'assets/orca.png'},
+      {src:'assets/orca-formal.png'}
+    ];
+  }
+
+  window.__orcaGalleryItems = items;
+
+  grid.innerHTML = items.map((g,i)=>`
+    <button class="gallery-card titleless" type="button" data-index="${i}">
+      <img src="${g.src}" alt="">
+    </button>
+  `).join('');
+}
+
+orcaLoadGalleryFixed();
+
+(() => {
+  if(document.querySelector('.orca-lightbox')) return;
+
+  const lb = document.createElement('div');
+  lb.className = 'orca-lightbox';
+  lb.innerHTML = `
+    <button class="lb-close" type="button">×</button>
+    <button class="lb-prev" type="button">‹</button>
+    <img alt="">
+    <button class="lb-next" type="button">›</button>
+  `;
+  document.body.appendChild(lb);
+
+  let index = 0;
+  const img = lb.querySelector('img');
+
+  function show(i){
+    const items = window.__orcaGalleryItems || [];
+    if(!items.length) return;
+    index = (i + items.length) % items.length;
+    img.src = items[index].src;
+    lb.classList.add('open');
+  }
+
+  document.addEventListener('click', e => {
+    const card = e.target.closest('.gallery-card');
+    if(card && card.dataset.index !== undefined){
+      show(Number(card.dataset.index));
+    }
+  });
+
+  lb.querySelector('.lb-close').addEventListener('click', () => lb.classList.remove('open'));
+  lb.querySelector('.lb-prev').addEventListener('click', () => show(index - 1));
+  lb.querySelector('.lb-next').addEventListener('click', () => show(index + 1));
+
+  lb.addEventListener('click', e => {
+    if(e.target === lb) lb.classList.remove('open');
+  });
+
+  document.addEventListener('keydown', e => {
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') lb.classList.remove('open');
+    if(e.key === 'ArrowLeft') show(index - 1);
+    if(e.key === 'ArrowRight') show(index + 1);
+  });
+})();
