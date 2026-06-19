@@ -1,0 +1,22 @@
+[
+  {
+    "title": "立ち絵",
+    "category": "OFFICIAL",
+    "src": "assets/orca.png"
+  },
+  {
+    "title": "ロゴ",
+    "category": "LOGO",
+    "src": "assets/logo.png"
+  },
+  {
+    "title": "サムネ枠",
+    "category": "THUMBNAIL",
+    "src": "assets/orca-mark.svg"
+  },
+  {
+    "title": "ファンアート",
+    "category": "FAN ART",
+    "src": "assets/orca-mark.svg"
+  }
+]
