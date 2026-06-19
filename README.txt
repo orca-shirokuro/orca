@@ -1,1 +1,1 @@
-GitHub Pages用：全ファイルとフォルダをリポジトリ直下にアップロードしてください。NEWS/スケジュール/ギャラリー/動画は data フォルダのJSONで編集できます。
+Enterprise V2: リポジトリ直下にアップロード。data内JSONでNEWS/SCHEDULE/GALLERY/MOVIESを更新。

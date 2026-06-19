@@ -1,22 +1,22 @@
 [
   {
-    "title": "立ち絵",
-    "category": "OFFICIAL",
+    "title": "MAIN VISUAL",
+    "category": "OFFICIAL ART",
     "src": "assets/orca.png"
   },
   {
-    "title": "ロゴ",
-    "category": "LOGO",
+    "title": "LOGO",
+    "category": "BRAND LOGO",
     "src": "assets/logo.png"
   },
   {
-    "title": "サムネ枠",
+    "title": "ORCA MOTIF",
     "category": "THUMBNAIL",
     "src": "assets/orca-mark.svg"
   },
   {
-    "title": "ファンアート",
-    "category": "FAN ART",
+    "title": "FAN ART",
+    "category": "#おるかあーと",
     "src": "assets/orca-mark.svg"
   }
 ]
