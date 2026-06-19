@@ -71,3 +71,34 @@ function addJelly(){
 }
 for(let i=0;i<6;i++) setTimeout(addJelly, i*1200);
 setInterval(addJelly, 5200);
+
+
+// ===== V6 ROBUST CHARACTER SWITCH =====
+(() => {
+  const mainCharacter = document.getElementById("mainCharacter");
+  const charButtons = document.querySelectorAll(".char-btn");
+  if(!mainCharacter || !charButtons.length) return;
+
+  charButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const next = btn.dataset.char;
+      if(!next) return;
+
+      mainCharacter.classList.add("switching");
+
+      setTimeout(() => {
+        mainCharacter.src = next;
+        if(next.includes("formal")){
+          document.body.classList.add("formal-mode");
+        }else{
+          document.body.classList.remove("formal-mode");
+        }
+
+        charButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        setTimeout(() => mainCharacter.classList.remove("switching"), 120);
+      }, 180);
+    });
+  });
+})();

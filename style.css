@@ -181,3 +181,99 @@
 @media(max-width:560px){
   .countdown-box{grid-template-columns:repeat(2,1fr)}
 }
+
+
+/* ===== V6 BACKGROUND + LINK LOGOS ===== */
+.ocean{
+  background-image:
+    linear-gradient(180deg,rgba(0,5,16,.12),rgba(0,0,0,.35)),
+    url("assets/bg-deepsea.svg") !important;
+  background-size:cover !important;
+  background-position:center top !important;
+}
+.ocean .whale{
+  opacity:.18 !important;
+}
+.socials a{
+  position:relative;
+  overflow:hidden;
+}
+.socials a::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:linear-gradient(135deg,rgba(255,255,255,.22),transparent 45%,rgba(0,220,255,.2));
+  opacity:.65;
+  pointer-events:none;
+}
+.link-logo{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 12px rgba(0,210,255,.45));
+  position:relative;
+  z-index:1;
+}
+.socials a span{
+  position:relative;
+  z-index:1;
+}
+body.formal-mode .ocean{
+  filter:brightness(.72) contrast(1.18) saturate(.9);
+}
+body.formal-mode .hero{
+  background:radial-gradient(circle at 75% 50%,rgba(110,210,255,.18),transparent 35%);
+}
+body.formal-mode .hero h1{
+  text-shadow:0 0 15px #fff,0 0 34px #8fd3ff,0 0 80px #3ebfff;
+}
+body.formal-mode .ring{
+  border-color:rgba(180,235,255,.58);
+  box-shadow:0 0 36px rgba(130,220,255,.42),0 0 110px rgba(130,220,255,.2);
+}
+.character{
+  transition:opacity .35s ease, transform .35s ease;
+}
+.character.switching{
+  opacity:0;
+  transform:translateY(18px) scale(.985);
+}
+.character-switch{
+  position:absolute;
+  z-index:5;
+  right:6%;
+  bottom:8%;
+  display:flex;
+  gap:10px;
+  padding:8px;
+  border:1px solid rgba(122,228,255,.45);
+  border-radius:999px;
+  background:rgba(0,12,30,.58);
+  backdrop-filter:blur(14px);
+  box-shadow:0 0 24px rgba(0,200,255,.25);
+}
+.char-btn{
+  border:1px solid rgba(122,228,255,.45);
+  background:rgba(0,50,100,.45);
+  color:#f2fbff;
+  border-radius:999px;
+  padding:8px 14px;
+  font-weight:900;
+  cursor:pointer;
+  transition:.25s;
+}
+.char-btn:hover,
+.char-btn.active{
+  background:linear-gradient(135deg,rgba(0,200,255,.55),rgba(0,65,130,.85));
+  color:#fff;
+  box-shadow:0 0 18px rgba(0,210,255,.72);
+  transform:translateY(-2px);
+}
+@media(max-width:980px){
+  .character-switch{
+    position:static;
+    margin:14px auto 0;
+    justify-content:center;
+    width:max-content;
+  }
+}

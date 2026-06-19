@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+<defs>
+<radialGradient id="g1" cx="48%" cy="0%" r="75%">
+<stop offset="0" stop-color="#1dafff" stop-opacity=".55"/>
+<stop offset=".42" stop-color="#06396d" stop-opacity=".42"/>
+<stop offset="1" stop-color="#020713"/>
+</radialGradient>
+<linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+<stop stop-color="#b9f6ff" stop-opacity=".42"/>
+<stop offset=".75" stop-color="#23c7ff" stop-opacity="0"/>
+</linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="5"/></filter>
+<filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1920" height="1080" fill="url(#g1)"/>
+<path d="M0 820 C260 700 420 760 650 650 C900 530 1110 600 1380 470 C1600 365 1770 410 1920 320 L1920 1080 L0 1080 Z" fill="#020714" opacity=".55"/>
+<path d="M650 -80 L960 -80 L1180 1080 L420 1080 Z" fill="url(#ray)" opacity=".55"/>
+<path d="M1190 -120 L1430 -120 L1690 1080 L980 1080 Z" fill="url(#ray)" opacity=".22"/>
+<path d="M210 420C445 120 920 55 1280 230c155 75 270 170 400 320-240-42-395 50-555 155-280 184-700 128-940-80-80-70-88-130 25-205z" fill="#020814" opacity=".48" filter="url(#blur)"/>
+<path d="M560 320c-150 10-260 60-385 165 215 75 415 42 585-95-58-56-120-82-200-70z" fill="#00040c" opacity=".72"/>
+<path d="M1035 255c125-120 285-150 470-125-170 88-270 190-335 365-35-95-78-165-135-240z" fill="#00040c" opacity=".7"/>
+<circle cx="450" cy="410" r="27" fill="#00040c" opacity=".85"/>
+<g opacity=".42" filter="url(#glow)">
+<circle cx="260" cy="170" r="8" fill="none" stroke="#9cecff" stroke-width="2"/>
+<circle cx="1590" cy="190" r="14" fill="none" stroke="#9cecff" stroke-width="2"/>
+<circle cx="1680" cy="620" r="30" fill="none" stroke="#9cecff" stroke-width="2"/>
+<circle cx="220" cy="740" r="25" fill="none" stroke="#9cecff" stroke-width="2"/>
+<circle cx="1010" cy="420" r="18" fill="none" stroke="#9cecff" stroke-width="2"/>
+</g>
+</svg>
