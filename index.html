@@ -1,413 +1,168 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>白黒オルカ | Official Website</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Noto Sans JP',sans-serif;
-background:#020812;
-color:white;
-overflow-x:hidden;
-}
-
-/* 深海背景 */
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background:
-linear-gradient(rgba(0,20,40,.7),rgba(0,5,15,.95)),
-url("https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2000");
-background-size:cover;
-background-position:center;
-z-index:-2;
-}
-
-body::after{
-content:"";
-position:fixed;
-inset:0;
-background:
-radial-gradient(circle at top,#38bdf8 0%,transparent 40%);
-opacity:.25;
-z-index:-1;
-}
-
-/* HEADER */
-
-header{
-position:fixed;
-top:0;
-width:100%;
-height:80px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:0 40px;
-background:rgba(0,0,0,.35);
-backdrop-filter:blur(15px);
-z-index:999;
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.logo img{
-height:55px;
-}
-
-.logo h2{
-font-size:1.2rem;
-font-weight:700;
-}
-
-nav{
-display:flex;
-gap:25px;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-font-size:.9rem;
-letter-spacing:1px;
-transition:.3s;
-}
-
-nav a:hover{
-color:#5dd9ff;
-}
-
-/* HERO */
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:120px 8%;
-}
-
-.hero-left{
-width:50%;
-}
-
-.hero-left h1{
-font-size:6rem;
-line-height:0.9;
-font-weight:700;
-text-shadow:0 0 30px #4fcfff;
-}
-
-.hero-left h1 span{
-font-size:2.2rem;
-display:block;
-letter-spacing:12px;
-margin-bottom:20px;
-}
-
-.catch{
-font-size:1.8rem;
-margin:30px 0;
-}
-
-.sub{
-letter-spacing:8px;
-color:#6edfff;
-margin-bottom:40px;
-}
-
-.hero-right{
-width:50%;
-text-align:center;
-}
-
-.hero-right img{
-height:850px;
-max-height:85vh;
-filter:drop-shadow(0 0 40px #0099ff);
-}
-
-/* SNS */
-
-.sns{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.sns a{
-padding:15px 25px;
-border-radius:15px;
-background:rgba(0,150,255,.12);
-backdrop-filter:blur(10px);
-border:1px solid rgba(120,220,255,.3);
-color:white;
-text-decoration:none;
-transition:.3s;
-}
-
-.sns a:hover{
-transform:translateY(-4px);
-box-shadow:0 0 20px #22cfff;
-}
-
-/* SECTION */
-
-section{
-padding:100px 8%;
-}
-
-.section-title{
-font-size:2.5rem;
-margin-bottom:30px;
-color:#79e4ff;
-}
-
-.card{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-backdrop-filter:blur(15px);
-border-radius:25px;
-padding:35px;
-}
-
-/* PROFILE */
-
-.profile-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:20px;
-}
-
-.item{
-padding:20px;
-background:rgba(255,255,255,.04);
-border-radius:15px;
-}
-
-/* FAN */
-
-.fan{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-text-align:center;
-}
-
-.fan-box{
-padding:25px;
-border-radius:20px;
-background:rgba(255,255,255,.04);
-}
-
-/* FOOTER */
-
-footer{
-padding:60px;
-text-align:center;
-color:#999;
-}
-
-/* スマホ */
-
-@media(max-width:1000px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-left,
-.hero-right{
-width:100%;
-}
-
-.hero-left h1{
-font-size:4rem;
-}
-
-.hero-right img{
-height:auto;
-width:90%;
-}
-
-.profile-grid{
-grid-template-columns:1fr;
-}
-
-.fan{
-grid-template-columns:1fr;
-}
-
-header{
-padding:0 15px;
-}
-
-nav{
-display:none;
-}
-
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHIROKURO ORCA | Official Website</title>
+  <meta name="description" content="白黒オルカ公式サイト。人間になりたいただのシャチ。" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <div class="loading" id="loading">
+    <img src="assets/logo.png" alt="白黒オルカ ロゴ">
+    <p>DEEP SEA LOADING...</p>
+  </div>
 
-<header>
+  <div class="ocean-bg">
+    <div class="light"></div>
+    <div class="orca-shadow"></div>
+    <div class="grid-glow"></div>
+  </div>
 
-<div class="logo">
-<img src="assets/logo.png">
-<h2>SHIROKURO ORCA</h2>
-</div>
+  <div class="bubbles" id="bubbles"></div>
 
-<nav>
-<a href="#profile">PROFILE</a>
-<a href="#community">COMMUNITY</a>
-<a href="#goods">GOODS</a>
-</nav>
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <img src="assets/logo.png" alt="白黒オルカ">
+      <span>
+        <b>SHIROKURO</b>
+        <small>ORCA OFFICIAL</small>
+      </span>
+    </a>
 
-</header>
+    <button class="menu-btn" id="menuBtn" aria-label="メニュー">☰</button>
 
-<section class="hero">
+    <nav class="nav" id="nav">
+      <a href="#home">HOME</a>
+      <a href="#profile">PROFILE</a>
+      <a href="#news">NEWS</a>
+      <a href="#gallery">GALLERY</a>
+      <a href="#movies">MOVIES</a>
+      <a href="#goods">GOODS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
 
-<div class="hero-left">
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">DEEP SEA STREAMING BASE</p>
+        <h1><span>SHIROKURO</span>ORCA</h1>
+        <p class="catch">人間になりたいただのシャチ</p>
+        <p class="lead">
+          深海からやってきたシャチ系配信者。<br>
+          雑談とゲームを中心に、今日も飼育員さんたちに会いに浮上中。
+        </p>
 
-<h1>
-<span>SHIROKURO</span>
-ORCA
-</h1>
+        <div class="socials">
+          <a href="https://web.iriam.app/s/user/uzA1OhNF3G?uuid=45efcd5b" target="_blank">IRIAM</a>
+          <a href="https://x.com/orca_whiteblack" target="_blank">X</a>
+          <a href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank">YouTube</a>
+          <a href="https://www.tiktok.com/@orca_white.black" target="_blank">TikTok</a>
+          <a href="https://suzuri.jp/orca_White_Black" target="_blank">GOODS</a>
+        </div>
+      </div>
 
-<div class="catch">
-人間になりたいただのシャチ
-</div>
+      <div class="hero-visual reveal">
+        <div class="character-ring"></div>
+        <img src="assets/orca.png" alt="白黒オルカ 立ち絵">
+      </div>
 
-<div class="sub">
-DEEP SEA STREAMING BASE
-</div>
+      <div class="scroll-sign">SCROLL</div>
+    </section>
 
-<div class="sns">
+    <section class="dashboard">
+      <article class="panel news reveal" id="news">
+        <div class="panel-head"><h2>NEWS</h2><span>X風お知らせ</span></div>
+        <div class="tweet"><b>白黒オルカ 🤍∞🖤</b><small>@orca_whiteblack ・2時間前</small><p>公式サイトがついにオープンしました！これからもよろしくね、飼育員さんっ🐋</p><em>#おるかあーと</em></div>
+        <div class="tweet"><b>白黒オルカ 🤍∞🖤</b><small>@orca_whiteblack ・1日前</small><p>今日も浮上予定！雑談とゲームでまったり遊ぼう。</p></div>
+        <div class="tweet"><b>白黒オルカ 🤍∞🖤</b><small>@orca_whiteblack ・3日前</small><p>新しいグッズをSUZURIに追加しました！チェックしてみてね。</p></div>
+        <a class="line-btn" href="https://x.com/orca_whiteblack" target="_blank">Xでフォローする →</a>
+      </article>
 
-<a href="https://x.com/orca_whiteblack">X</a>
+      <article class="panel profile reveal" id="profile">
+        <div class="panel-head"><h2>PROFILE</h2><span>プロフィール</span></div>
+        <div class="profile-wrap">
+          <div>
+            <h3>白黒オルカ</h3>
+            <p>深海からやってきた、人間になりたいただのシャチ。<br>雑談やゲーム配信を中心に活動中。<br>おしゃべりが大好きで、たこやきを食べながらのんびり過ごす時間がお気に入り。</p>
+          </div>
+          <dl class="data-list">
+            <div><dt>誕生日</dt><dd>10 / 29</dd></div>
+            <div><dt>好きなもの</dt><dd>たこやき</dd></div>
+            <div><dt>趣味</dt><dd>おしゃべり / ゲーム / 寝ること</dd></div>
+            <div><dt>配信内容</dt><dd>雑談配信 / ゲーム配信</dd></div>
+          </dl>
+        </div>
+      </article>
 
-<a href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ">YouTube</a>
+      <article class="panel fan reveal" id="fan">
+        <div class="panel-head"><h2>FAN COMMUNITY</h2><span>ファンコミュニティ</span></div>
+        <div class="fan-cards">
+          <div><small>FAN MARK</small><b>🤍∞🖤</b></div>
+          <div><small>FAN NAME</small><b>オルカの飼育員さん</b></div>
+          <div><small>FAN ART TAG</small><b>#おるかあーと</b></div>
+        </div>
+        <p>応援してくれるみんなは「オルカの飼育員さん」。ファンアートは「#おるかあーと」で投稿してね！</p>
+        <a class="line-btn" href="https://x.com/search?q=%23%E3%81%8A%E3%82%8B%E3%81%8B%E3%81%82%E3%83%BC%E3%81%A8&src=typed_query" target="_blank">#おるかあーと を検索する →</a>
+      </article>
 
-<a href="https://suzuri.jp/orca_White_Black">GOODS</a>
+      <article class="panel gallery reveal" id="gallery">
+        <div class="panel-head"><h2>GALLERY</h2><span>ギャラリー</span></div>
+        <div class="gallery-grid">
+          <div class="gallery-card"><img src="assets/orca.png" alt=""><span>OFFICIAL ART</span></div>
+          <div class="gallery-card mini"><img src="assets/logo.png" alt=""><span>LOGO</span></div>
+          <div class="gallery-card ocean"><span>THUMBNAIL</span></div>
+          <div class="gallery-card sketch"><span>FAN ART</span></div>
+        </div>
+        <p class="note">あとから画像を追加しやすいように、assets/gallery に入れる運用へ拡張できます。</p>
+      </article>
 
-</div>
+      <article class="panel movies reveal" id="movies">
+        <div class="panel-head"><h2>MOVIES</h2><span>YouTube</span></div>
+        <div class="movie-grid">
+          <a class="movie-card" href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank"><div class="play">▶</div><img src="assets/orca.png" alt=""><b>雑談配信</b><small>まったり深海トーク</small></a>
+          <a class="movie-card" href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank"><div class="play">▶</div><img src="assets/orca.png" alt=""><b>ゲーム配信</b><small>飼育員さんと遊ぶ</small></a>
+          <a class="movie-card" href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank"><div class="play">▶</div><img src="assets/orca.png" alt=""><b>歌・企画</b><small>coming soon</small></a>
+        </div>
+        <a class="line-btn" href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank">YouTubeチャンネルへ →</a>
+      </article>
 
-</div>
+      <article class="panel goods reveal" id="goods">
+        <div class="panel-head"><h2>OFFICIAL GOODS</h2><span>公式グッズ</span></div>
+        <div class="goods-banner">
+          <div>
+            <h3>白黒オルカ<br>公式グッズ発売中！</h3>
+            <p>ここでしか手に入らないアイテムをチェック。</p>
+            <a href="https://suzuri.jp/orca_White_Black" target="_blank">SUZURI SHOPへ →</a>
+          </div>
+          <img src="assets/logo.png" alt="">
+        </div>
+      </article>
+    </section>
 
-<div class="hero-right">
-<img src="assets/orca.png">
-</div>
+    <section class="contact reveal" id="contact">
+      <img src="assets/logo.png" alt="">
+      <h2>CONTACT</h2>
+      <p>お問い合わせ・ご依頼はX、または各SNSからお願いします。</p>
+      <a href="https://x.com/orca_whiteblack" target="_blank">Xで連絡する →</a>
+    </section>
+  </main>
 
-</section>
+  <footer>
+    <div class="footer-brand"><img src="assets/logo.png" alt=""><span>SHIROKURO ORCA</span></div>
+    <div class="footer-links">
+      <a href="https://web.iriam.app/s/user/uzA1OhNF3G?uuid=45efcd5b" target="_blank">IRIAM</a>
+      <a href="https://x.com/orca_whiteblack" target="_blank">X</a>
+      <a href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank">YouTube</a>
+      <a href="https://www.tiktok.com/@orca_white.black" target="_blank">TikTok</a>
+      <a href="https://suzuri.jp/orca_White_Black" target="_blank">SUZURI</a>
+    </div>
+    <small>© 2026 SHIROKURO ORCA. All Rights Reserved.</small>
+  </footer>
 
-<section id="profile">
-
-<h2 class="section-title">PROFILE</h2>
-
-<div class="card">
-
-<div class="profile-grid">
-
-<div class="item">
-誕生日<br><strong>10 / 29</strong>
-</div>
-
-<div class="item">
-好きなもの<br><strong>たこやき</strong>
-</div>
-
-<div class="item">
-趣味<br><strong>おしゃべり・ゲーム・寝ること</strong>
-</div>
-
-<div class="item">
-配信内容<br><strong>雑談・ゲーム配信</strong>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="community">
-
-<h2 class="section-title">FAN COMMUNITY</h2>
-
-<div class="fan">
-
-<div class="fan-box">
-🤍∞🖤<br>
-ファンマーク
-</div>
-
-<div class="fan-box">
-オルカの飼育員さん<br>
-ファンネーム
-</div>
-
-<div class="fan-box">
-#おるかあーと<br>
-ファンアートタグ
-</div>
-
-</div>
-
-</section>
-
-<section id="goods">
-
-<h2 class="section-title">OFFICIAL GOODS</h2>
-
-<div class="card">
-
-<h3>白黒オルカ公式グッズ</h3>
-
-<br>
-
-<p>
-SUZURIにて販売中
-</p>
-
-<br>
-
-<a href="https://suzuri.jp/orca_White_Black" style="color:#79e4ff;">
-ショップを見る →
-</a>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 SHIROKURO ORCA
-
-</footer>
-
+  <button class="top-btn" id="topBtn">TOP</button>
+  <script src="script.js"></script>
 </body>
 </html>
