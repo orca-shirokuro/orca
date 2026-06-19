@@ -1,1 +1,1 @@
-Enterprise V3: 中身だけリポジトリ直下にアップロード。
+Enterprise V4 Character Switch: 通常衣装と黒スーツ立ち絵を切り替え可能。中身だけリポジトリ直下にアップロードしてください。

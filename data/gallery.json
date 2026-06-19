@@ -5,6 +5,11 @@
     "src": "assets/orca.png"
   },
   {
+    "title": "BLACK SUIT",
+    "category": "ALT COSTUME",
+    "src": "assets/orca-formal.png"
+  },
+  {
     "title": "BRAND LOGO",
     "category": "LOGO",
     "src": "assets/logo.png"
