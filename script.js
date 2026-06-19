@@ -13,3 +13,61 @@ charButtons.forEach(btn => {
     btn.classList.add('active');
   });
 });
+
+
+// ===== V5 EFFECTS =====
+
+// Lightbox for gallery images
+(() => {
+  const lightbox = document.createElement('div');
+  lightbox.className = 'lightbox';
+  lightbox.innerHTML = '<button aria-label="閉じる">×</button><img alt="">';
+  document.body.appendChild(lightbox);
+  const img = lightbox.querySelector('img');
+  const close = lightbox.querySelector('button');
+
+  document.addEventListener('click', (e) => {
+    const cardImg = e.target.closest('.gallery-card img');
+    if (!cardImg) return;
+    img.src = cardImg.src;
+    lightbox.classList.add('open');
+  });
+
+  close.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+})();
+
+// Countdown
+const nextStreamDate = '2026-06-20T21:00:00+09:00';
+function updateCountdown(){
+  const target = new Date(nextStreamDate).getTime();
+  const now = Date.now();
+  let diff = Math.max(0, target - now);
+  const d = Math.floor(diff / (1000*60*60*24)); diff -= d*(1000*60*60*24);
+  const h = Math.floor(diff / (1000*60*60)); diff -= h*(1000*60*60);
+  const m = Math.floor(diff / (1000*60)); diff -= m*(1000*60);
+  const s = Math.floor(diff / 1000);
+  const set = (id, val) => { const el = document.getElementById(id); if(el) el.textContent = String(val).padStart(2,'0'); };
+  set('cdDays', d); set('cdHours', h); set('cdMinutes', m); set('cdSeconds', s);
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Jellyfish particles
+const jellyLayer = document.body;
+function addJelly(){
+  const j = document.createElement('span');
+  j.className = 'jelly';
+  j.style.left = Math.random()*100 + '%';
+  j.style.bottom = '-90px';
+  j.style.opacity = Math.random()*.28 + .08;
+  j.style.setProperty('--drift', ((Math.random()-.5)*220)+'px');
+  j.style.animationDuration = (Math.random()*20 + 18) + 's';
+  j.style.transform = `scale(${Math.random()*.8 + .6})`;
+  jellyLayer.appendChild(j);
+  setTimeout(()=>j.remove(), 40000);
+}
+for(let i=0;i<6;i++) setTimeout(addJelly, i*1200);
+setInterval(addJelly, 5200);

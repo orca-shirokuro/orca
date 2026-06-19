@@ -1,1 +1,1 @@
-Enterprise V4 Character Switch: 通常衣装と黒スーツ立ち絵を切り替え可能。中身だけリポジトリ直下にアップロードしてください。
+Enterprise V5 Effects: 衣装切替、浮遊演出、ギャラリー拡大、カウントダウン、クラゲ演出入り。ZIPの中身だけをGitHub直下にアップロードしてください。
