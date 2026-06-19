@@ -1,1 +1,1 @@
-Enterprise V2: リポジトリ直下にアップロード。data内JSONでNEWS/SCHEDULE/GALLERY/MOVIESを更新。
+Enterprise V3: 中身だけリポジトリ直下にアップロード。

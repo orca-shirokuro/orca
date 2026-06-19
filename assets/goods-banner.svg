@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360">
+<rect width="1000" height="360" rx="28" fill="#dff6ff"/>
+<circle cx="820" cy="180" r="128" fill="#b8eaff"/>
+<text x="70" y="125" font-size="54" font-family="sans-serif" font-weight="900" fill="#031326">白黒オルカ</text>
+<text x="70" y="190" font-size="48" font-family="sans-serif" font-weight="900" fill="#031326">公式グッズ発売中！</text>
+<text x="72" y="255" font-size="28" font-family="sans-serif" font-weight="700" fill="#0b3459">SUZURI SHOP</text>
+<rect x="690" y="88" width="210" height="210" rx="26" fill="#111827"/>
+<circle cx="795" cy="193" r="58" fill="#fff"/>
+<path d="M770 195c35-50 80-43 110 0" stroke="#031326" stroke-width="10" fill="none"/>
+</svg>

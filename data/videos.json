@@ -1,21 +1,21 @@
 [
   {
-    "title": "雑談配信｜深海トーク",
-    "date": "2026.06.20",
-    "duration": "LIVE",
+    "title": "First Movie",
+    "date": "COMING SOON",
+    "duration": "--:--",
+    "url": "https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ",
+    "thumb": "assets/deep-orca.svg"
+  },
+  {
+    "title": "Game Stream",
+    "date": "COMING SOON",
+    "duration": "--:--",
     "url": "https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ",
     "thumb": "assets/orca.png"
   },
   {
-    "title": "ゲーム配信｜飼育員さんと遊ぶ",
-    "date": "2026.06.22",
-    "duration": "01:48:33",
-    "url": "https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ",
-    "thumb": "assets/orca-mark.svg"
-  },
-  {
-    "title": "企画配信｜coming soon",
-    "date": "2026.06.29",
+    "title": "Talk Stream",
+    "date": "COMING SOON",
     "duration": "--:--",
     "url": "https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ",
     "thumb": "assets/logo.png"

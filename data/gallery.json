@@ -5,18 +5,18 @@
     "src": "assets/orca.png"
   },
   {
-    "title": "LOGO",
-    "category": "BRAND LOGO",
+    "title": "BRAND LOGO",
+    "category": "LOGO",
     "src": "assets/logo.png"
   },
   {
-    "title": "ORCA MOTIF",
+    "title": "DEEP ORCA",
     "category": "THUMBNAIL",
-    "src": "assets/orca-mark.svg"
+    "src": "assets/deep-orca.svg"
   },
   {
-    "title": "FAN ART",
-    "category": "#おるかあーと",
-    "src": "assets/orca-mark.svg"
+    "title": "COMING SOON",
+    "category": "FAN ART",
+    "src": "assets/goods-banner.svg"
   }
 ]
