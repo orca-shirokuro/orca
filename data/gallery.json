@@ -1,57 +1,13 @@
 [
-  {
-    "src": "assets/orca.png",
-    "title": "通常立ち絵",
-    "category": "official"
-  },
-  {
-    "src": "assets/orca-formal.png",
-    "title": "黒スーツ",
-    "category": "official"
-  },
-  {
-    "src": "assets/gallery/chibi-orca-hood.png",
-    "title": "ちーぺん。描き下ろし",
-    "category": "ちーぺん。描き下ろし"
-  },
-  {
-    "src": "assets/gallery/chibi-flower.png",
-    "title": "ちーぺん。描き下ろし",
-    "category": "ちーぺん。描き下ろし"
-  },
-  {
-    "src": "assets/gallery/chibi-balloon.png",
-    "title": "ちーぺん。描き下ろし",
-    "category": "ちーぺん。描き下ろし"
-  },
-  {
-    "src": "assets/gallery/mascot-orca-summer.png",
-    "title": "ちーぺん。描き下ろし",
-    "category": "ちーぺん。描き下ろし"
-  },
-  {
-    "src": "assets/gallery/chibi-wasou.png",
-    "title": "ちーぺん。描き下ろし",
-    "category": "ちーぺん。描き下ろし"
-  },
-  {
-    "src": "assets/gallery/mascot-orca-pair.png",
-    "title": "ちーぺん。描き下ろし",
-    "category": "ちーぺん。描き下ろし"
-  },
-  {
-    "src": "assets/gallery/chibi-rain-green.png",
-    "title": "ちーぺん。描き下ろし",
-    "category": "ちーぺん。描き下ろし"
-  },
-  {
-    "src": "assets/gallery/chibi-rain-pink.png",
-    "title": "ちーぺん。描き下ろし",
-    "category": "ちーぺん。描き下ろし"
-  },
-  {
-    "src": "assets/gallery/chibi-rain-yellow.png",
-    "title": "ちーぺん。描き下ろし",
-    "category": "ちーぺん。描き下ろし"
-  }
+  { "src": "assets/orca.png" },
+  { "src": "assets/orca-formal.png" },
+  { "src": "assets/gallery/chibi-orca-hood.png" },
+  { "src": "assets/gallery/chibi-flower.png" },
+  { "src": "assets/gallery/chibi-balloon.png" },
+  { "src": "assets/gallery/mascot-orca-summer.png" },
+  { "src": "assets/gallery/chibi-wasou.png" },
+  { "src": "assets/gallery/mascot-orca-pair.png" },
+  { "src": "assets/gallery/chibi-rain-green.png" },
+  { "src": "assets/gallery/chibi-rain-pink.png" },
+  { "src": "assets/gallery/chibi-rain-yellow.png" }
 ]
