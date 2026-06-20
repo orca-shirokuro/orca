@@ -576,3 +576,19 @@ body.formal-mode .ring{
   .gallery{grid-template-columns:repeat(2,1fr) !important}
   .gallery-card{height:150px !important}
 }
+
+.gallery-credit a{
+  color:#eaffff;
+  text-decoration:none;
+  border-bottom:1px solid rgba(140,240,255,.55);
+  text-shadow:0 0 12px rgba(0,210,255,.55);
+}
+.gallery-credit a:hover{
+  color:#8cf1ff;
+}
+.footer-message{
+  margin:10px 0 6px;
+  color:#b8d9e8;
+  letter-spacing:.08em;
+  font-size:13px;
+}
