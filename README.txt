@@ -1,4 +1,1 @@
-SHIROKURO ORCA Official Website Final V1
-ZIP内の中身だけをGitHubリポジトリ直下へアップロードしてください。
-含まれるもの: index.html / style.css / script.js / admin.html / assets / data
-ギャラリー画像は assets/gallery に同梱済み。data/gallery.json も設定済み。
+V8 Gallery Tabs Slider: ALL / 公式立ち絵 / ちーぺん。 / マスコット の分類タブ、横スライド、クリック拡大対応。ZIPの中身だけをGitHub直下へアップロードしてください。
