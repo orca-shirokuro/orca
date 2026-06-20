@@ -334,3 +334,149 @@ orcaLoadGalleryFixed();
 
   loadGalleryV8();
 })();
+
+
+// ===== V9 FINAL GALLERY: TABS / SLIDER / NO PAGE JUMP =====
+(() => {
+  const grid = document.getElementById('galleryGrid');
+  if (!grid) return;
+
+  let itemsAll = [];
+  let currentFilter = 'all';
+  let currentIndex = 0;
+
+  const fallback = [
+    {src:'assets/orca.png', category:'official'},
+    {src:'assets/orca-formal.png', category:'official'}
+  ];
+
+  const getItems = () => currentFilter === 'all'
+    ? itemsAll
+    : itemsAll.filter(item => item.category === currentFilter);
+
+  function render(){
+    const items = getItems();
+    window.__orcaGalleryItems = items;
+    currentIndex = 0;
+
+    grid.innerHTML = items.map((item, index) => `
+      <button class="gallery-card titleless" type="button" data-gallery-index="${index}" aria-label="ギャラリー画像を拡大">
+        <img src="${item.src}" alt="" loading="lazy">
+      </button>
+    `).join('');
+
+    requestAnimationFrame(() => grid.scrollTo({left:0, behavior:'smooth'}));
+  }
+
+  async function init(){
+    try{
+      const res = await fetch('data/gallery.json', {cache:'no-store'});
+      if(!res.ok) throw new Error('gallery json not found');
+      itemsAll = await res.json();
+    }catch(e){
+      itemsAll = fallback;
+    }
+    render();
+  }
+
+  // Tabs
+  document.querySelectorAll('.gallery-tab').forEach(tab => {
+    tab.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      currentFilter = tab.dataset.filter || 'all';
+      document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      render();
+    });
+  });
+
+  // Slider arrows
+  document.querySelector('.gallery-prev')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    grid.scrollBy({left: -grid.clientWidth * 0.9, behavior:'smooth'});
+  });
+
+  document.querySelector('.gallery-next')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    grid.scrollBy({left: grid.clientWidth * 0.9, behavior:'smooth'});
+  });
+
+  // Lightbox
+  let lightbox = document.querySelector('.orca-lightbox');
+  if (!lightbox) {
+    lightbox = document.createElement('div');
+    lightbox.className = 'orca-lightbox';
+    lightbox.innerHTML = `
+      <button class="lb-close" type="button" aria-label="閉じる">×</button>
+      <button class="lb-prev" type="button" aria-label="前へ">‹</button>
+      <img alt="">
+      <button class="lb-next" type="button" aria-label="次へ">›</button>
+    `;
+    document.body.appendChild(lightbox);
+  }
+
+  const lbImg = lightbox.querySelector('img');
+
+  function showLightbox(index){
+    const items = getItems();
+    if (!items.length) return;
+
+    currentIndex = (index + items.length) % items.length;
+    lbImg.src = items[currentIndex].src;
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Capture phase prevents any old href="#" / anchor handler from moving the page
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest('.gallery-card');
+    if (!card) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+
+    const index = Number(card.dataset.galleryIndex ?? card.dataset.index ?? 0);
+    showLightbox(index);
+  }, true);
+
+  lightbox.querySelector('.lb-close')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    closeLightbox();
+  });
+
+  lightbox.querySelector('.lb-prev')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    showLightbox(currentIndex - 1);
+  });
+
+  lightbox.querySelector('.lb-next')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    showLightbox(currentIndex + 1);
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if(e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if(!lightbox.classList.contains('open')) return;
+    if(e.key === 'Escape') closeLightbox();
+    if(e.key === 'ArrowLeft') showLightbox(currentIndex - 1);
+    if(e.key === 'ArrowRight') showLightbox(currentIndex + 1);
+  });
+
+  init();
+})();
