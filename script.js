@@ -536,3 +536,37 @@ orcaLoadGalleryFixed();
     }
   }, {passive:true});
 })();
+
+
+// ===== V11 IMAGE SAVE PROTECTION =====
+
+// ギャラリー・拡大表示の右クリック保存を防ぐ
+document.addEventListener("contextmenu", (e) => {
+  if (
+    e.target.closest(".gallery-card") ||
+    e.target.closest(".orca-lightbox")
+  ) {
+    e.preventDefault();
+  }
+});
+
+// ドラッグ保存を防ぐ
+document.addEventListener("dragstart", (e) => {
+  if (
+    e.target.closest(".gallery-card") ||
+    e.target.closest(".orca-lightbox")
+  ) {
+    e.preventDefault();
+  }
+});
+
+// タッチ長押し対策
+document.addEventListener("touchstart", (e) => {
+  if (
+    e.target.closest(".gallery-card") ||
+    e.target.closest(".orca-lightbox")
+  ) {
+    e.target.style.webkitTouchCallout = "none";
+    e.target.style.userSelect = "none";
+  }
+}, { passive:true });
