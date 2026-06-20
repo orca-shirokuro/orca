@@ -738,3 +738,96 @@ body.formal-mode .ring{
     height:280px !important;
   }
 }
+
+
+/* ===== V10 CREDIT SEPARATION + RIGHTS PROTECTION ===== */
+
+/* Credit appears only when JS selects chiipen / mascot tabs */
+#galleryCredit.gallery-credit{
+  position:relative;
+  z-index:2;
+  color:#8cf1ff;
+  font-size:12px;
+  letter-spacing:.14em;
+  margin:-8px 0 14px;
+  font-weight:900;
+}
+#galleryCredit.gallery-credit a{
+  color:#eaffff;
+  text-decoration:none;
+  border-bottom:1px solid rgba(140,240,255,.55);
+  text-shadow:0 0 12px rgba(0,210,255,.55);
+}
+#galleryCredit.gallery-credit a:hover{
+  color:#8cf1ff;
+}
+
+/* Watermark on gallery thumbnails */
+.gallery-card{
+  position:relative !important;
+  overflow:hidden !important;
+}
+.gallery-card::after{
+  content:"© SHIROKURO ORCA" !important;
+  position:absolute !important;
+  right:10px !important;
+  bottom:10px !important;
+  z-index:10 !important;
+  font-size:10px !important;
+  font-weight:900 !important;
+  color:rgba(255,255,255,.62) !important;
+  text-shadow:0 0 6px rgba(0,0,0,.95) !important;
+  pointer-events:none !important;
+}
+
+/* If older CSS had magnifier overlay, keep magnifier on hover via ::before instead */
+.gallery-card::before{
+  content:"🔍";
+  display:grid;
+  place-items:center;
+  position:absolute;
+  inset:0;
+  background:rgba(0,8,18,.34);
+  color:#fff;
+  font-size:24px;
+  opacity:0;
+  transition:.25s;
+  pointer-events:none;
+  z-index:8;
+}
+.gallery-card:hover::before{
+  opacity:1;
+}
+
+/* Lightbox watermark */
+.orca-lightbox{
+  position:fixed !important;
+}
+.orca-lightbox::after{
+  content:"© SHIROKURO ORCA";
+  position:absolute;
+  right:22px;
+  bottom:22px;
+  z-index:10;
+  font-size:16px;
+  font-weight:900;
+  color:rgba(255,255,255,.48);
+  text-shadow:0 0 10px rgba(0,0,0,.95);
+  pointer-events:none;
+}
+
+/* Make casual saving harder */
+.gallery-card img,
+.orca-lightbox img{
+  user-select:none !important;
+  -webkit-user-drag:none !important;
+  -webkit-touch-callout:none !important;
+}
+
+/* Hide gallery scrollbar for cleaner slider */
+.gallery-slider{
+  scrollbar-width:none !important;
+}
+.gallery-slider::-webkit-scrollbar{
+  display:none !important;
+}

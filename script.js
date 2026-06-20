@@ -480,3 +480,59 @@ orcaLoadGalleryFixed();
 
   init();
 })();
+
+
+// ===== V10 GALLERY CREDIT SEPARATION + SAVE DETERRENCE =====
+(() => {
+  const credit = document.getElementById("galleryCredit");
+
+  function updateGalleryCredit(filter){
+    if(!credit) return;
+    if(filter === "chiipen" || filter === "mascot"){
+      credit.style.display = "block";
+    }else{
+      credit.style.display = "none";
+    }
+  }
+
+  // Initial state: ALL / official do not show chiipen credit
+  updateGalleryCredit("all");
+
+  // Watch gallery tab clicks and show credit only for chiipen + mascot
+  document.querySelectorAll(".gallery-tab").forEach(tab => {
+    tab.addEventListener("click", () => {
+      updateGalleryCredit(tab.dataset.filter || "all");
+    });
+  });
+
+  // Prevent easy right-click save inside gallery/lightbox
+  document.addEventListener("contextmenu", (e) => {
+    if(
+      e.target.closest(".gallery-card") ||
+      e.target.closest(".orca-lightbox")
+    ){
+      e.preventDefault();
+    }
+  });
+
+  // Prevent easy drag-save inside gallery/lightbox
+  document.addEventListener("dragstart", (e) => {
+    if(
+      e.target.closest(".gallery-card") ||
+      e.target.closest(".orca-lightbox")
+    ){
+      e.preventDefault();
+    }
+  });
+
+  // Prevent long-press context menu on touch devices as much as possible
+  document.addEventListener("touchstart", (e) => {
+    if(
+      e.target.closest(".gallery-card") ||
+      e.target.closest(".orca-lightbox")
+    ){
+      e.target.style.webkitTouchCallout = "none";
+      e.target.style.userSelect = "none";
+    }
+  }, {passive:true});
+})();
