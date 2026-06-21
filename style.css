@@ -1184,3 +1184,88 @@ body.formal-mode .ring{
     max-height:none;
   }
 }
+
+
+/* ===== V15 GOODS CLEAN FIX ===== */
+.goods-clean{
+  display:grid !important;
+  grid-template-columns: minmax(260px,.8fr) minmax(360px,1.35fr) !important;
+  gap:30px !important;
+  align-items:center !important;
+  min-height:auto !important;
+}
+
+.goods-clean-copy{
+  width:100% !important;
+  min-width:0 !important;
+  padding:30px 26px !important;
+  border:1px solid rgba(120,220,255,.35) !important;
+  border-radius:24px !important;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(120,230,255,.18), transparent 35%),
+    linear-gradient(145deg, rgba(2,20,50,.88), rgba(0,8,24,.72)) !important;
+  box-shadow:
+    0 0 40px rgba(0,190,255,.18),
+    inset 0 0 30px rgba(0,190,255,.08) !important;
+  text-align:center !important;
+}
+
+.goods-clean-copy .suzuri-logo-main{
+  width:min(240px,85%) !important;
+  margin:0 auto 24px !important;
+  display:block !important;
+  filter:drop-shadow(0 0 16px rgba(0,220,255,.45)) !important;
+}
+
+.goods-clean-copy h3{
+  margin:0 0 28px !important;
+  color:#fff !important;
+  font-size:clamp(30px,3.2vw,48px) !important;
+  line-height:1.22 !important;
+  letter-spacing:.02em !important;
+  text-shadow:0 0 18px rgba(0,210,255,.35) !important;
+  white-space:normal !important;
+  writing-mode:horizontal-tb !important;
+}
+
+.goods-clean-copy .suzuri-shop-btn{
+  width:200px !important;
+  height:54px !important;
+  margin:0 auto !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+}
+
+.goods-clean .goods-product-stage{
+  min-height:330px !important;
+  padding:24px !important;
+}
+
+.goods-clean .goods-product-stage img{
+  width:100% !important;
+  max-width:760px !important;
+  max-height:330px !important;
+  object-fit:contain !important;
+  transform:none !important;
+}
+
+.goods-clean .goods-product-stage:hover img{
+  transform:scale(1.03) !important;
+}
+
+/* remove older V13 text/tags visually if any remains */
+.goods-badge,
+.goods-tags,
+.goods-hero-card p:not(.goods-subtitle){
+  display:none !important;
+}
+
+@media(max-width:900px){
+  .goods-clean{
+    grid-template-columns:1fr !important;
+  }
+}
