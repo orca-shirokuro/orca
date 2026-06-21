@@ -1422,3 +1422,149 @@ body.formal-mode .ring{
     min-height:240px !important;
   }
 }
+
+
+/* ===== V17 GOODS BANNER LAYOUT ===== */
+#goods .goods-banner{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  grid-template-columns:320px 1fr !important;
+  gap:22px !important;
+  align-items:center !important;
+  padding:22px !important;
+  min-height:310px !important;
+  border:1px solid rgba(120,220,255,.30);
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 74% 42%, rgba(130,230,255,.18), transparent 35%),
+    linear-gradient(135deg, rgba(0,44,84,.54), rgba(0,8,24,.80));
+  box-shadow:
+    0 0 42px rgba(0,190,255,.18),
+    inset 0 0 34px rgba(0,200,255,.07);
+  overflow:hidden;
+}
+
+#goods .goods-banner::before{
+  content:"AQUARIUM GIFT SHOP";
+  position:absolute;
+  left:22px;
+  bottom:12px;
+  font-family:Cinzel,serif;
+  font-size:18px;
+  letter-spacing:.24em;
+  color:rgba(140,240,255,.16);
+  pointer-events:none;
+}
+
+#goods .goods-banner-copy{
+  position:relative;
+  z-index:3;
+  padding:0 8px;
+  text-align:left !important;
+}
+
+#goods .goods-banner-copy .suzuri-logo-main{
+  width:210px !important;
+  height:auto !important;
+  margin:0 0 24px !important;
+  display:block !important;
+  filter:drop-shadow(0 0 16px rgba(0,220,255,.45)) !important;
+}
+
+#goods .goods-banner-copy h3{
+  margin:0 0 26px !important;
+  color:#fff !important;
+  font-size:clamp(32px,3vw,48px) !important;
+  line-height:1.18 !important;
+  letter-spacing:.04em !important;
+  white-space:normal !important;
+  writing-mode:horizontal-tb !important;
+  word-break:keep-all !important;
+  text-shadow:0 0 20px rgba(0,210,255,.38) !important;
+}
+
+#goods .goods-banner-copy .suzuri-shop-btn{
+  width:180px !important;
+  height:50px !important;
+  margin:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+  letter-spacing:.08em !important;
+  box-shadow:0 0 28px rgba(0,210,255,.24) !important;
+}
+
+#goods .goods-banner-image{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  place-items:center !important;
+  min-width:0 !important;
+  padding:16px !important;
+  border:1px solid rgba(120,220,255,.26);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(150,235,255,.16), transparent 48%),
+    rgba(0,12,30,.44);
+  overflow:hidden;
+}
+
+#goods .goods-banner-image::after{
+  content:"";
+  position:absolute;
+  inset:auto 10% 0 10%;
+  height:40%;
+  background:radial-gradient(ellipse, rgba(0,210,255,.20), transparent 70%);
+  filter:blur(18px);
+  pointer-events:none;
+}
+
+#goods .goods-banner-image img{
+  position:relative;
+  z-index:2;
+  width:100% !important;
+  max-width:560px !important;
+  max-height:250px !important;
+  object-fit:contain !important;
+  border-radius:18px !important;
+  filter:
+    drop-shadow(0 16px 30px rgba(0,0,0,.40))
+    drop-shadow(0 0 22px rgba(0,200,255,.14)) !important;
+  transition:.3s ease !important;
+}
+
+#goods .goods-banner-image:hover img{
+  transform:scale(1.035) !important;
+}
+
+/* hide all older goods structures/remnants */
+#goods .goods-badge,
+#goods .goods-tags,
+#goods .goods-hero-card,
+#goods .goods-clean-copy,
+#goods .goods-unified,
+#goods .goods-product-stage,
+#goods .goods-unified-text,
+#goods .goods-unified-image{
+  display:none !important;
+}
+
+@media(max-width:900px){
+  #goods .goods-banner{
+    grid-template-columns:1fr !important;
+    text-align:center;
+  }
+  #goods .goods-banner-copy{
+    text-align:center !important;
+  }
+  #goods .goods-banner-copy .suzuri-logo-main{
+    margin:0 auto 20px !important;
+  }
+  #goods .goods-banner-copy .suzuri-shop-btn{
+    margin:0 auto !important;
+  }
+}
