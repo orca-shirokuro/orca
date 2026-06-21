@@ -3,26 +3,18 @@
 ■ 週間スケジュールを変えたい時
 data/schedule.json を開いて編集します。
 
-例：
-{
-  "day": "TUE",
-  "date": "06/25",
-  "time": "22:00",
-  "title": "ゲーム配信",
-  "type": "game"
-}
+■ リンクを変えたい時
+index.html の中のURLを変えます。
 
-typeに入れられる文字：
-off   = おやすみ
-game  = ゲーム配信
-talk  = 雑談配信
-event = 企画枠
-main  = メイン配信
+今回追加したリンク：
+マシュマロ
+https://marshmallow-qa.com/lz768ckm53b3a5n?t=7Hlkml&utm_medium=url_text&utm_source=promotion
 
-■ グッズの文章を変えたい時
-index.html の GOODS の中にある
-「キーホルダー・マグカップ・アクスタ・ステッカー・缶バッジ」
-の部分だけ変えればOKです。
+Gipt
+https://gi-pt.com/main/wishlist/fan-view/3a21fbf9-94c3-784e-6ee2-7ada4b298cbc
+
+ゼットンX
+https://x.com/zzton007
 
 ■ 商品画像を変えたい時
 assets/goods/suzuri-products.png を同じ名前で差し替えます。

@@ -1063,3 +1063,109 @@ h1{
     0 0 54px rgba(0,190,255,.36),
     inset 0 0 28px rgba(142,238,255,.12) !important;
 }
+
+
+/* ===== V33 LINKS / SUPPORT / ZETTON X ===== */
+.link-emoji{
+  display:block;
+  font-size:30px;
+  line-height:1;
+  filter:drop-shadow(0 0 10px rgba(142,238,255,.35));
+}
+
+.hero-links a .link-emoji,
+.sns-links a .link-emoji{
+  margin-bottom:6px;
+}
+
+.unit-link-card{
+  text-decoration:none;
+  color:inherit;
+  cursor:pointer;
+}
+
+.unit-link-card:hover{
+  border-color:rgba(255,85,85,.65) !important;
+  box-shadow:
+    0 0 20px rgba(255,70,70,.28),
+    inset 0 0 20px rgba(255,70,70,.08) !important;
+}
+
+.unit-link-card figcaption small,
+.unit-link-card span small{
+  display:block;
+  margin-top:3px;
+  color:#ffb6b6;
+  font-size:9px;
+  letter-spacing:.06em;
+}
+
+.sns-panel{
+  grid-column:1 / -1;
+}
+
+.sns-panel > p{
+  margin:0 0 18px;
+  color:#d9f7ff;
+  font-weight:900;
+}
+
+.sns-links a{
+  display:flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  min-height:86px;
+}
+
+.sns-links img{
+  width:30px;
+  height:30px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 10px rgba(142,238,255,.35));
+}
+
+.support-area{
+  margin-top:26px;
+  padding:22px;
+  border:1px solid rgba(142,238,255,.28);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(142,238,255,.13), transparent 50%),
+    rgba(0,16,36,.48);
+}
+
+.support-area h3{
+  margin:0 0 8px;
+  font-family:Cinzel,serif;
+  font-size:clamp(24px,2.2vw,34px);
+  letter-spacing:.08em;
+  color:#fff;
+  text-shadow:
+    0 0 8px rgba(142,238,255,.85),
+    0 0 18px rgba(0,190,255,.45);
+}
+
+.support-area p{
+  margin:0 0 16px;
+  color:#b7d9e8;
+  font-weight:900;
+}
+
+.support-links a{
+  min-width:160px;
+}
+
+.support-links a:last-child{
+  border-color:rgba(255,190,120,.38);
+  box-shadow:0 0 18px rgba(255,190,120,.12), inset 0 0 18px rgba(255,190,120,.06);
+}
+
+.support-links a:last-child:hover{
+  border-color:rgba(255,210,140,.78) !important;
+  box-shadow:
+    0 0 18px rgba(255,210,140,.34),
+    0 0 34px rgba(255,170,80,.18),
+    inset 0 0 18px rgba(255,210,140,.10) !important;
+}
