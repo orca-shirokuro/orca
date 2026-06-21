@@ -2818,3 +2818,237 @@ section.grid > #goods{
     min-height:210px !important;
   }
 }
+
+
+/* ===== V24 HARD GRID FIX ===== */
+/* JSでカードを #orca-fixed-grid に集めて、既存CSS競合を強制回避 */
+#orca-fixed-grid{
+  width:min(1260px,94vw) !important;
+  margin:36px auto 46px !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+  gap:18px !important;
+  align-items:start !important;
+  position:relative !important;
+  z-index:5 !important;
+}
+
+#orca-fixed-grid > .panel,
+#orca-fixed-grid > article,
+#orca-fixed-grid > section{
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
+  margin:0 !important;
+  grid-column:auto !important;
+  overflow:hidden !important;
+}
+
+#orca-fixed-grid > #news{ order:1 !important; }
+#orca-fixed-grid > #schedule{ order:2 !important; }
+#orca-fixed-grid > #profile{ order:3 !important; }
+#orca-fixed-grid > #unit{ order:4 !important; }
+#orca-fixed-grid > #fan{ order:5 !important; }
+#orca-fixed-grid > #gallery{ order:6 !important; }
+#orca-fixed-grid > #movies{ order:7 !important; }
+#orca-fixed-grid > #goods{ order:8 !important; }
+#orca-fixed-grid > #sns{
+  order:9 !important;
+  grid-column:1 / -1 !important;
+}
+
+/* 高さをそろえる */
+#orca-fixed-grid > #news,
+#orca-fixed-grid > #schedule{ min-height:350px !important; }
+
+#orca-fixed-grid > #profile,
+#orca-fixed-grid > #unit{ min-height:390px !important; }
+
+#orca-fixed-grid > #fan,
+#orca-fixed-grid > #gallery{ min-height:400px !important; }
+
+#orca-fixed-grid > #movies,
+#orca-fixed-grid > #goods{ min-height:390px !important; }
+
+/* PROFILE崩れ対策 */
+#orca-fixed-grid #profile .profile{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(230px,.9fr) !important;
+  gap:18px !important;
+}
+#orca-fixed-grid #profile .profile *{ min-width:0 !important; }
+
+/* UNIT調整 */
+#orca-fixed-grid #unit .unit-card{
+  min-height:310px !important;
+  padding:16px !important;
+}
+#orca-fixed-grid #unit .unit-logo{
+  width:min(100%,340px) !important;
+  max-height:92px !important;
+}
+#orca-fixed-grid #unit .unit-members{
+  display:grid !important;
+  grid-template-columns:1fr 38px 1fr !important;
+  gap:10px !important;
+}
+#orca-fixed-grid #unit .unit-member{
+  height:190px !important;
+  min-height:190px !important;
+}
+#orca-fixed-grid #unit .unit-member img{
+  max-height:184px !important;
+  max-width:88% !important;
+}
+#orca-fixed-grid #unit .unit-cross{ font-size:32px !important; }
+#orca-fixed-grid #unit .unit-copy{
+  margin-top:10px !important;
+  font-size:13px !important;
+}
+
+/* MOVIES半幅対策 */
+#orca-fixed-grid #movies .movies{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:12px !important;
+}
+#orca-fixed-grid #movies .movie-card{ min-width:0 !important; }
+
+/* GOODS V24 完全再設計 */
+#goods .goods-v24{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:14px !important;
+  padding:16px !important;
+  border:1px solid rgba(120,220,255,.30);
+  border-radius:22px;
+  background:
+    radial-gradient(circle at 50% 68%, rgba(130,230,255,.16), transparent 42%),
+    linear-gradient(135deg, rgba(0,42,82,.55), rgba(0,8,24,.82));
+  overflow:hidden !important;
+}
+
+#goods .goods-v24-top{
+  display:grid !important;
+  grid-template-columns:140px minmax(0,1fr) 120px !important;
+  gap:12px !important;
+  align-items:center !important;
+  padding:14px !important;
+  border:1px solid rgba(120,220,255,.24);
+  border-radius:18px;
+  background:rgba(0,18,42,.50);
+}
+
+#goods .goods-v24-top .suzuri-logo-main{
+  width:130px !important;
+  max-width:100% !important;
+  margin:0 !important;
+  display:block !important;
+  filter:drop-shadow(0 0 14px rgba(0,220,255,.42)) !important;
+}
+
+#goods .goods-v24-top h3{
+  margin:0 !important;
+  color:#fff !important;
+  font-size:clamp(20px,2vw,28px) !important;
+  line-height:1.22 !important;
+  letter-spacing:.03em !important;
+  text-align:left !important;
+  white-space:normal !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
+  writing-mode:horizontal-tb !important;
+  text-shadow:0 0 18px rgba(0,210,255,.38) !important;
+}
+
+#goods .goods-v24-top .suzuri-shop-btn{
+  width:112px !important;
+  height:42px !important;
+  margin:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+  font-size:13px !important;
+  font-weight:900 !important;
+}
+
+#goods .goods-v24-img{
+  height:210px !important;
+  display:grid !important;
+  place-items:center !important;
+  padding:12px !important;
+  border:1px solid rgba(120,220,255,.24);
+  border-radius:18px;
+  background:rgba(0,12,30,.42);
+  overflow:hidden !important;
+}
+
+#goods .goods-v24-img img{
+  width:100% !important;
+  max-width:590px !important;
+  max-height:190px !important;
+  object-fit:contain !important;
+  border-radius:14px !important;
+  transform:none !important;
+}
+
+/* 古いGOODS全部隠す */
+#goods .goods-badge,
+#goods .goods-tags,
+#goods .goods-hero-card,
+#goods .goods-clean-copy,
+#goods .goods-unified,
+#goods .goods-product-stage,
+#goods .goods-unified-text,
+#goods .goods-unified-image,
+#goods .goods-banner,
+#goods .goods-wide,
+#goods .goods-final,
+#goods .goods-v22,
+#goods .goods-v23{
+  display:none !important;
+}
+
+/* SNS */
+#orca-fixed-grid #sns{
+  text-align:center !important;
+}
+#orca-fixed-grid #sns .sns-hub{
+  padding:24px !important;
+}
+#orca-fixed-grid #sns .sns-links{
+  display:flex !important;
+  justify-content:center !important;
+  flex-wrap:wrap !important;
+  gap:12px !important;
+}
+
+/* スマホは1列 */
+@media(max-width:900px){
+  #orca-fixed-grid{
+    display:block !important;
+    width:min(94vw,720px) !important;
+  }
+  #orca-fixed-grid > *{
+    margin-bottom:18px !important;
+  }
+  #orca-fixed-grid #profile .profile,
+  #orca-fixed-grid #unit .unit-members,
+  #goods .goods-v24-top{
+    grid-template-columns:1fr !important;
+    text-align:center !important;
+    justify-items:center !important;
+  }
+  #goods .goods-v24-top h3{
+    text-align:center !important;
+  }
+  #orca-fixed-grid #movies .movies{
+    grid-template-columns:1fr !important;
+  }
+  #goods .goods-v24-img{
+    height:auto !important;
+    min-height:200px !important;
+  }
+}

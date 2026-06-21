@@ -1,7 +1,6 @@
-V23 Grid Rebuild:
-- section.gridの配置を完全固定
-- NEWS/SCHEDULE、PROFILE/UNIT、FAN/GALLERY、MOVIES/GOODSを揃える
-- FOLLOW MEを最下段フル幅へ移動
-- GOODSを半幅でも崩れない縦型カードに変更
-- 旧GOODSパーツを非表示
+V24 Hard Grid Fix:
+- JSでNEWS/SCHEDULE/PROFILE/UNIT/FAN/GALLERY/MOVIES/GOODS/SNSを専用グリッドへ移動
+- 既存CSS競合を回避して2列配置を強制
+- GOODSを再設計してはみ出し防止
+- FOLLOW MEを最下段フル幅へ固定
 ZIPの中身だけをGitHub直下へ上書きしてください。

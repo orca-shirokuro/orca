@@ -62,16 +62,61 @@
       <div id="galleryGrid" class="gallery gallery-slider"></div>
       <button class="gallery-arrow gallery-next" type="button" aria-label="次へ">›</button>
     </div><p class="note">今後ギャラリー素材を追加予定。</p></article><article id="movies" class="panel reveal"><h2>MOVIES <small>YouTube / Coming Soon</small></h2><div id="movieGrid" class="movies"></div><a class="btn" href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank">YouTubeへ</a></article><article id="goods" class="panel goods reveal"><h2>OFFICIAL GOODS <small>SUZURI</small></h2>
-    <div class="goods-content goods-v23">
-      <div class="goods-v23-head">
+    <div class="goods-content goods-v24">
+      <div class="goods-v24-top">
         <img class="suzuri-logo-main" src="assets/goods/suzuri-logo-white.png" alt="SUZURI">
         <h3>白黒オルカ<br>公式グッズ発売中！</h3>
         <a class="btn suzuri-shop-btn" href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">SHOPへ</a>
       </div>
-
-      <div class="goods-v23-image">
+      <div class="goods-v24-img">
         <img src="assets/goods/suzuri-products.png" alt="白黒オルカ公式グッズ">
       </div>
     </div>
-</article></section></main>
-<footer><img src="assets/logo.png"><b>SHIROKURO ORCA</b><div><a href="https://web.iriam.app/s/user/uzA1OhNF3G?uuid=45efcd5b" target="_blank">IRIAM</a><a href="https://x.com/orca_whiteblack" target="_blank">X</a><a href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank">YouTube</a><a href="https://www.tiktok.com/@orca_white.black" target="_blank">TikTok</a><a href="https://suzuri.jp/orca_White_Black" target="_blank">SUZURI</a></div><small>© 2026 SHIROKURO ORCA. All Rights Reserved.</small></footer><button id="top">TOP</button><script src="script.js"></script></body></html>
+</article></section>
+<section id="sns" class="panel reveal sns-panel">
+  <h2>FOLLOW ME <small>SNS Links</small></h2>
+  <div class="sns-hub">
+    <p>白黒オルカの最新情報・配信告知はこちら</p>
+    <div class="sns-links">
+      <a class="sns-link" href="https://x.com/orca_whiteblack" target="_blank" rel="noopener">X</a>
+      <a class="sns-link" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+      <a class="sns-link" href="https://web.iriam.app/s/user/uZA10hNF3G?uuid=45efcd5b" target="_blank" rel="noopener">IRIAM</a>
+      <a class="sns-link" href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+      <a class="sns-link" href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">SUZURI</a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer><img src="assets/logo.png"><b>SHIROKURO ORCA</b><div><a href="https://web.iriam.app/s/user/uzA1OhNF3G?uuid=45efcd5b" target="_blank">IRIAM</a><a href="https://x.com/orca_whiteblack" target="_blank">X</a><a href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank">YouTube</a><a href="https://www.tiktok.com/@orca_white.black" target="_blank">TikTok</a><a href="https://suzuri.jp/orca_White_Black" target="_blank">SUZURI</a></div><small>© 2026 SHIROKURO ORCA. All Rights Reserved.</small></footer><button id="top">TOP</button><script src="script.js"></script>
+<script>
+(function(){
+  function buildFixedGrid(){
+    const ids = ["news","schedule","profile","unit","fan","gallery","movies","goods","sns"];
+    const nodes = ids.map(id => document.getElementById(id)).filter(Boolean);
+    if(nodes.length < 4) return;
+
+    let grid = document.getElementById("orca-fixed-grid");
+    if(!grid){
+      grid = document.createElement("section");
+      grid.id = "orca-fixed-grid";
+      grid.className = "orca-fixed-grid";
+      const first = nodes[0];
+      first.parentNode.insertBefore(grid, first);
+    }
+
+    ids.forEach(id => {
+      const el = document.getElementById(id);
+      if(el && el.parentNode !== grid) grid.appendChild(el);
+    });
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", buildFixedGrid);
+  }else{
+    buildFixedGrid();
+  }
+})();
+</script>
+
+</body></html>
