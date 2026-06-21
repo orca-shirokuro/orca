@@ -1,6 +1,6 @@
-V27 Gallery Category Fix:
-- 公式立ち絵：orca.png / orca-formal.png
-- ちーぺん。：chibi-* 系
-- マスコット：mascot-orca-* / mini-* 系
-- フィルター処理を data-category で安定化
+V28 Top + Gallery Fix:
+- TOPの白黒オルカ立ち絵を大きく調整
+- マスコットカテゴリは mascot-orca-summer.png / mascot-orca-pair.png の2枚だけ
+- mini-* はちーぺん。カテゴリへ移動
+- マスコット2枚表示時は矢印を非表示、将来3枚以上なら自動表示
 ZIPの中身だけをGitHub直下へ上書きしてください。

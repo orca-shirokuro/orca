@@ -81,3 +81,35 @@ document.querySelectorAll(".tabs button").forEach(btn => {
     }
   });
 });
+
+
+// V28: mascot is only mascot-orca-summer / mascot-orca-pair.
+// Future mascot images can be added by giving data-category="mascot".
+function updateGalleryByCategory(filter){
+  const items = [...document.querySelectorAll(".gallery-item")];
+  items.forEach(item => {
+    const show = filter === "all" || item.dataset.category === filter;
+    item.hidden = !show;
+    item.style.display = show ? "" : "none";
+  });
+
+  const visibleCount = items.filter(item => !item.hidden).length;
+  const prev = document.querySelector(".gallery-wrap .prev");
+  const next = document.querySelector(".gallery-wrap .next");
+  if(prev && next){
+    const useSlider = visibleCount > 2;
+    prev.style.visibility = useSlider ? "visible" : "hidden";
+    next.style.visibility = useSlider ? "visible" : "hidden";
+  }
+}
+
+document.querySelectorAll(".tabs button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    updateGalleryByCategory(btn.dataset.filter);
+    document.querySelector(".gallery-track")?.scrollTo({left:0, behavior:"smooth"});
+  });
+});
+
+updateGalleryByCategory(document.querySelector(".tabs button.active")?.dataset.filter || "all");
