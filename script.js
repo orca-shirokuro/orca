@@ -123,11 +123,11 @@ async function loadWeeklySchedule(){
 
   const fallback = [
     {day:"MON", date:"06/24", time:"おやすみ", title:"OFF", type:"off"},
-    {day:"TUE", date:"06/25", time:"22:00", title:"ゲーム配信", type:"game"},
-    {day:"WED", date:"06/26", time:"21:00", title:"雑談配信", type:"talk"},
-    {day:"THU", date:"06/27", time:"21:00", title:"企画枠", type:"event"},
-    {day:"FRI", date:"06/28", time:"22:00", title:"ゲーム配信", type:"game"},
-    {day:"SAT", date:"06/29", time:"21:00", title:"メイン配信", type:"main"},
+    {day:"TUE", date:"06/25", time:"22:00", title:"更新中", type:"game"},
+    {day:"WED", date:"06/26", time:"21:00", title:"更新中", type:"talk"},
+    {day:"THU", date:"06/27", time:"21:00", title:"更新中", type:"event"},
+    {day:"FRI", date:"06/28", time:"22:00", title:"更新中", type:"game"},
+    {day:"SAT", date:"06/29", time:"21:00", title:"更新中", type:"main"},
     {day:"SUN", date:"06/30", time:"おやすみ", title:"OFF", type:"off"}
   ];
 
