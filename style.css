@@ -1978,3 +1978,259 @@ body.formal-mode .ring{
     max-height:225px !important;
   }
 }
+
+
+/* ===== V21 FINAL LAYOUT + GOODS FIX ===== */
+
+/* 全体カードの並びを揃える */
+main,
+.main,
+.sections,
+.content,
+.dashboard{
+  align-items:start;
+}
+
+/* 2カラム配置のズレを抑える */
+@media(min-width:901px){
+  #profile{ order:1; }
+  #unit{ order:2; }
+  #fan{ order:3; }
+  #gallery{ order:4; }
+  #movies{ order:5; }
+  #goods{ order:6; }
+
+  /* よく使われているグリッド親に効くよう広めに指定 */
+  main:has(#profile),
+  .main:has(#profile),
+  .sections:has(#profile),
+  .content:has(#profile),
+  .dashboard:has(#profile){
+    display:grid !important;
+    grid-template-columns:minmax(360px, 1fr) minmax(520px, 1.42fr) !important;
+    gap:18px !important;
+    align-items:start !important;
+  }
+}
+
+/* PROFILE / UNIT の高さ感を合わせる */
+#profile,
+#unit,
+#fan,
+#gallery,
+#movies,
+#goods{
+  box-sizing:border-box;
+}
+
+#profile,
+#unit{
+  min-height:360px;
+}
+
+/* UNITカードを横のPROFILEに合いやすい低め構成へ */
+#unit .unit-card{
+  min-height:300px !important;
+  padding:18px !important;
+}
+
+#unit .unit-logo{
+  width:min(100%, 360px) !important;
+  max-height:100px !important;
+}
+
+#unit .unit-members{
+  grid-template-columns:1fr 38px 1fr !important;
+  gap:10px !important;
+}
+
+#unit .unit-member{
+  height:185px !important;
+  min-height:185px !important;
+}
+
+#unit .unit-member img{
+  max-height:180px !important;
+  max-width:88% !important;
+}
+
+#unit .unit-cross{
+  font-size:32px !important;
+}
+
+#unit .unit-copy{
+  margin-top:10px !important;
+  font-size:13px !important;
+}
+
+/* FAN / GALLERY の段差を少なくする */
+#fan,
+#gallery{
+  min-height:410px;
+}
+
+/* MOVIES / GOODS を揃える */
+#movies,
+#goods{
+  min-height:390px;
+}
+
+/* GOODS完全修正版 */
+#goods .goods-final{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  grid-template-columns:230px minmax(0,1fr) !important;
+  gap:18px !important;
+  align-items:center !important;
+  min-height:285px !important;
+  padding:18px !important;
+  border:1px solid rgba(120,220,255,.30);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 72% 48%, rgba(130,230,255,.20), transparent 36%),
+    linear-gradient(135deg, rgba(0,42,82,.55), rgba(0,8,24,.82));
+  box-shadow:
+    0 0 38px rgba(0,190,255,.18),
+    inset 0 0 32px rgba(0,200,255,.07);
+  overflow:hidden;
+}
+
+#goods .goods-final::before{
+  content:"GOODS";
+  position:absolute;
+  right:18px;
+  top:12px;
+  font-family:Cinzel,serif;
+  font-size:74px;
+  font-weight:900;
+  letter-spacing:.10em;
+  color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+
+#goods .goods-final-copy{
+  position:relative;
+  z-index:3;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  height:240px !important;
+  padding:16px 12px !important;
+  border:1px solid rgba(120,220,255,.26);
+  border-radius:20px;
+  background:rgba(0,18,42,.56);
+  text-align:center !important;
+  overflow:hidden;
+}
+
+#goods .goods-final-copy .suzuri-logo-main{
+  display:block !important;
+  width:165px !important;
+  height:auto !important;
+  margin:0 0 18px !important;
+  filter:drop-shadow(0 0 15px rgba(0,220,255,.42)) !important;
+}
+
+#goods .goods-final-copy h3{
+  margin:0 0 20px !important;
+  color:#fff !important;
+  font-size:clamp(22px, 2vw, 30px) !important;
+  line-height:1.24 !important;
+  letter-spacing:.03em !important;
+  text-align:center !important;
+  white-space:normal !important;
+  writing-mode:horizontal-tb !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
+  text-shadow:0 0 18px rgba(0,210,255,.38) !important;
+}
+
+#goods .goods-final-copy .suzuri-shop-btn{
+  width:150px !important;
+  height:44px !important;
+  margin:0 auto !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+  font-size:14px !important;
+  font-weight:900 !important;
+  letter-spacing:.08em !important;
+  box-shadow:0 0 24px rgba(0,210,255,.22) !important;
+}
+
+#goods .goods-final-image{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  place-items:center !important;
+  height:240px !important;
+  min-width:0 !important;
+  padding:12px !important;
+  border:1px solid rgba(120,220,255,.25);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(150,235,255,.14), transparent 50%),
+    rgba(0,12,30,.42);
+  overflow:hidden;
+}
+
+#goods .goods-final-image img{
+  position:relative;
+  z-index:2;
+  width:100% !important;
+  max-width:620px !important;
+  max-height:220px !important;
+  object-fit:contain !important;
+  border-radius:16px !important;
+  transform:none !important;
+  filter:
+    drop-shadow(0 14px 28px rgba(0,0,0,.38))
+    drop-shadow(0 0 20px rgba(0,200,255,.14)) !important;
+  transition:.3s ease !important;
+}
+
+#goods .goods-final-image:hover img{
+  transform:scale(1.03) !important;
+}
+
+/* 古いGOODSパーツを完全に消す */
+#goods .goods-badge,
+#goods .goods-tags,
+#goods .goods-hero-card,
+#goods .goods-clean-copy,
+#goods .goods-unified,
+#goods .goods-product-stage,
+#goods .goods-unified-text,
+#goods .goods-unified-image,
+#goods .goods-banner,
+#goods .goods-wide{
+  display:none !important;
+}
+
+/* 画面幅が狭い時は縦並び */
+@media(max-width:900px){
+  main:has(#profile),
+  .main:has(#profile),
+  .sections:has(#profile),
+  .content:has(#profile),
+  .dashboard:has(#profile){
+    display:block !important;
+  }
+
+  #goods .goods-final{
+    grid-template-columns:1fr !important;
+  }
+
+  #goods .goods-final-copy,
+  #goods .goods-final-image{
+    height:auto !important;
+    min-height:220px !important;
+  }
+
+  #unit .unit-members{
+    grid-template-columns:1fr !important;
+  }
+}

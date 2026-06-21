@@ -1,6 +1,7 @@
-V20 Unit Balance Fix:
-- UNITカードの高さを抑えて全体バランスを改善
-- ロゴを小さめに調整
-- ゼットン/白黒オルカ立ち絵を見やすい比率に調整
-- FAN COMMUNITY横でも崩れにくいレイアウト
+V21 Layout + Goods Fix:
+- PROFILE / UNIT、FAN / GALLERY、MOVIES / GOODS の並びを揃えやすく調整
+- GOODS欄の文字はみ出しを修正
+- GOODS欄を2列カードで再設計
+- 旧GOODSパーツを非表示
+- V20までのユニット・ギャラリー・保存対策は継続
 ZIPの中身だけをGitHub直下へ上書きしてください。
