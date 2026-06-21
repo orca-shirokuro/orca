@@ -1269,3 +1269,156 @@ body.formal-mode .ring{
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* ===== V16 GOODS UNIFIED CLEAN LAYOUT ===== */
+#goods{
+  overflow:hidden;
+}
+
+#goods .goods-unified{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  grid-template-columns:minmax(300px,.85fr) minmax(420px,1.25fr) !important;
+  gap:28px !important;
+  align-items:center !important;
+  padding:24px !important;
+  border:1px solid rgba(120,220,255,.28);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 76% 48%, rgba(130,230,255,.20), transparent 34%),
+    linear-gradient(135deg, rgba(0,45,90,.46), rgba(0,10,28,.74));
+  box-shadow:
+    0 0 42px rgba(0,190,255,.18),
+    inset 0 0 34px rgba(0,200,255,.07);
+}
+
+#goods .goods-unified::before{
+  content:"GOODS";
+  position:absolute;
+  right:28px;
+  top:24px;
+  font-family:Cinzel,serif;
+  font-size:92px;
+  font-weight:900;
+  letter-spacing:.10em;
+  color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+
+#goods .goods-unified-text{
+  min-width:0 !important;
+  text-align:center !important;
+  padding:26px 20px !important;
+  border:1px solid rgba(120,220,255,.25);
+  border-radius:24px;
+  background:rgba(0,18,42,.54);
+  box-shadow:inset 0 0 28px rgba(0,190,255,.07);
+}
+
+#goods .goods-unified-text .suzuri-logo-main{
+  display:block !important;
+  width:min(230px,82%) !important;
+  height:auto !important;
+  margin:0 auto 24px !important;
+  filter:drop-shadow(0 0 18px rgba(0,220,255,.45)) !important;
+}
+
+#goods .goods-unified-text h3{
+  margin:0 0 28px !important;
+  color:#fff !important;
+  font-size:clamp(28px,3.2vw,44px) !important;
+  line-height:1.22 !important;
+  letter-spacing:.03em !important;
+  text-align:center !important;
+  white-space:normal !important;
+  writing-mode:horizontal-tb !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
+  text-shadow:0 0 18px rgba(0,210,255,.38) !important;
+}
+
+#goods .goods-unified-text .suzuri-shop-btn{
+  width:190px !important;
+  height:52px !important;
+  margin:0 auto !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+  font-size:16px !important;
+  font-weight:900 !important;
+  letter-spacing:.04em !important;
+  box-shadow:0 0 28px rgba(0,210,255,.22) !important;
+}
+
+#goods .goods-unified-image{
+  position:relative;
+  min-width:0 !important;
+  min-height:300px !important;
+  display:grid !important;
+  place-items:center !important;
+  padding:18px !important;
+  border:1px solid rgba(120,220,255,.30);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(150,235,255,.20), transparent 45%),
+    rgba(0,12,30,.48);
+  overflow:hidden;
+}
+
+#goods .goods-unified-image::after{
+  content:"";
+  position:absolute;
+  width:80%;
+  height:40%;
+  left:10%;
+  bottom:4%;
+  border-radius:50%;
+  background:radial-gradient(ellipse, rgba(0,210,255,.22), transparent 68%);
+  filter:blur(16px);
+  pointer-events:none;
+}
+
+#goods .goods-unified-image img{
+  position:relative;
+  z-index:2;
+  width:100% !important;
+  max-width:720px !important;
+  max-height:320px !important;
+  object-fit:contain !important;
+  border-radius:18px !important;
+  transform:none !important;
+  filter:
+    drop-shadow(0 16px 30px rgba(0,0,0,.38))
+    drop-shadow(0 0 22px rgba(0,200,255,.16)) !important;
+  transition:.3s ease !important;
+}
+
+#goods .goods-unified-image:hover img{
+  transform:scale(1.035) !important;
+}
+
+/* hide older goods remnants */
+#goods .goods-badge,
+#goods .goods-tags,
+#goods .goods-hero-card,
+#goods .goods-clean-copy,
+#goods .goods-product-stage:not(.goods-unified-image){
+  display:none !important;
+}
+
+@media(max-width:900px){
+  #goods .goods-unified{
+    grid-template-columns:1fr !important;
+    padding:18px !important;
+  }
+  #goods .goods-unified::before{
+    font-size:60px;
+    right:18px;
+  }
+  #goods .goods-unified-image{
+    min-height:240px !important;
+  }
+}
