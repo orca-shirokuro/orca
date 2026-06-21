@@ -1,6 +1,6 @@
-V28 Top + Gallery Fix:
-- TOPの白黒オルカ立ち絵を大きく調整
-- マスコットカテゴリは mascot-orca-summer.png / mascot-orca-pair.png の2枚だけ
-- mini-* はちーぺん。カテゴリへ移動
-- マスコット2枚表示時は矢印を非表示、将来3枚以上なら自動表示
+V29 Hero Ratio Fix:
+- TOP立ち絵が細長く伸びる問題を修正
+- height固定をやめて縦横比を維持
+- 通常衣装/黒スーツどちらも自然なサイズに調整
+- V28のギャラリー分類修正は継続
 ZIPの中身だけをGitHub直下へ上書きしてください。

@@ -571,3 +571,65 @@ h1{
     min-height:500px !important;
   }
 }
+
+
+/* ===== V29 HERO RATIO FIX ===== */
+/* TOP立ち絵が細長くならないように、height固定をやめて比率維持 */
+.hero-visual{
+  min-height:660px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+}
+
+.hero-visual::before{
+  width:min(560px,42vw) !important;
+  height:min(560px,42vw) !important;
+}
+
+.hero-orca{
+  width:auto !important;
+  height:auto !important;
+  max-width:min(430px,34vw) !important;
+  max-height:min(650px,72vh) !important;
+  object-fit:contain !important;
+  transform:none !important;
+  aspect-ratio:auto !important;
+}
+
+.hero-orca.switching{
+  opacity:.28 !important;
+  transform:translateY(8px) scale(.98) !important;
+}
+
+.costume-buttons{
+  bottom:18px !important;
+}
+
+/* 黒スーツは縦長画像なので少しだけ大きく見せるが、横幅は潰さない */
+.hero-orca[src*="orca-formal"]{
+  max-width:min(470px,36vw) !important;
+  max-height:min(680px,74vh) !important;
+}
+
+/* 通常衣装も小さくなりすぎない */
+.hero-orca[src$="orca.png"]{
+  max-width:min(460px,36vw) !important;
+  max-height:min(660px,72vh) !important;
+}
+
+@media(max-width:980px){
+  .hero-visual{
+    min-height:500px !important;
+  }
+
+  .hero-orca,
+  .hero-orca[src*="orca-formal"],
+  .hero-orca[src$="orca.png"]{
+    width:auto !important;
+    height:auto !important;
+    max-width:min(82vw,360px) !important;
+    max-height:500px !important;
+    transform:none !important;
+  }
+}
