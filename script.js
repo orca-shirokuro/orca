@@ -199,3 +199,20 @@ document.querySelectorAll(".panel, .btn, .hero-links a, .sns-links a, .tabs butt
     setTimeout(() => el.classList.remove("flash-glow"), 280);
   });
 });
+
+
+// V34 gallery future-ready slider visibility
+function v34GalleryButtonState(){
+  const visible = [...document.querySelectorAll(".gallery-item")].filter(item => item.style.display !== "none" && !item.hidden);
+  const prev = document.querySelector(".gallery-wrap .prev");
+  const next = document.querySelector(".gallery-wrap .next");
+  if(prev && next){
+    const show = visible.length > 2;
+    prev.style.visibility = show ? "visible" : "hidden";
+    next.style.visibility = show ? "visible" : "hidden";
+  }
+}
+document.querySelectorAll(".tabs button").forEach(btn=>{
+  btn.addEventListener("click",()=>setTimeout(v34GalleryButtonState,30));
+});
+v34GalleryButtonState();

@@ -3,20 +3,24 @@
 ■ 週間スケジュールを変えたい時
 data/schedule.json を開いて編集します。
 
-■ リンクを変えたい時
-index.html の中のURLを変えます。
+■ SUPPORTリンク
+SUZURI / Gipt / マシュマロは index.html の SUPPORT ORCA 内にあります。
 
-今回追加したリンク：
-マシュマロ
-https://marshmallow-qa.com/lz768ckm53b3a5n?t=7Hlkml&utm_medium=url_text&utm_source=promotion
+■ Giptロゴ
+assets/support/gipt-wishlist.png
 
-Gipt
-https://gi-pt.com/main/wishlist/fan-view/3a21fbf9-94c3-784e-6ee2-7ada4b298cbc
+■ SUZURIロゴ
+assets/support/suzuri-logo.png
 
-ゼットンX
-https://x.com/zzton007
+■ ギャラリー分類
+公式立ち絵：orca.png / orca-formal.png
+ちーぺん。：chibi-* 系だけ
+マスコット：mascot-orca-summer.png / mascot-orca-pair.png の2枚だけ
 
-■ 商品画像を変えたい時
-assets/goods/suzuri-products.png を同じ名前で差し替えます。
+■ マスコットが今後増えた時
+index.html の gallery-track に
+data-category="mascot"
+の画像を追加すればOKです。
+3枚以上になると矢印が自動表示されます。
 
 編集したら Commit changes を押すだけです。

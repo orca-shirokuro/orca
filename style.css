@@ -1169,3 +1169,142 @@ h1{
     0 0 34px rgba(255,170,80,.18),
     inset 0 0 18px rgba(255,210,140,.10) !important;
 }
+
+
+/* ===== V34 SUPPORT LOGOS + GALLERY CLEAN ===== */
+.support-logo-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+}
+
+.support-logo-card{
+  position:relative;
+  min-height:150px;
+  padding:16px;
+  border:1px solid rgba(142,238,255,.28);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(142,238,255,.14), transparent 52%),
+    rgba(0,16,36,.58);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  overflow:hidden;
+  transition:.28s ease;
+}
+
+.support-logo-card::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:linear-gradient(135deg, rgba(142,238,255,.18), transparent 38%, rgba(255,255,255,.05));
+  opacity:.7;
+  pointer-events:none;
+}
+
+.support-logo-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(142,238,255,.72);
+  box-shadow:
+    0 0 18px rgba(142,238,255,.34),
+    0 0 40px rgba(0,190,255,.18),
+    inset 0 0 18px rgba(142,238,255,.08);
+}
+
+.support-logo-card > *{
+  position:relative;
+  z-index:2;
+}
+
+.support-logo-card img{
+  max-width:86%;
+  max-height:62px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 12px rgba(142,238,255,.28));
+}
+
+.gipt-card img{
+  max-width:100%;
+  max-height:68px;
+  border-radius:10px;
+}
+
+.suzuri-card img{
+  max-height:54px;
+}
+
+.support-label{
+  color:#8eeeff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.18em;
+}
+
+.support-logo-card strong{
+  font-size:14px;
+  letter-spacing:.06em;
+}
+
+.marshmallow-big{
+  font-size:48px;
+  line-height:1;
+  filter:drop-shadow(0 0 14px rgba(255,170,230,.32));
+}
+
+.marshmallow-card{
+  border-color:rgba(255,170,230,.30);
+}
+
+.marshmallow-card:hover{
+  border-color:rgba(255,180,235,.78);
+  box-shadow:
+    0 0 18px rgba(255,170,230,.30),
+    0 0 38px rgba(255,120,220,.16),
+    inset 0 0 18px rgba(255,170,230,.08);
+}
+
+.gipt-card{
+  border-color:rgba(120,230,255,.38);
+}
+
+.gipt-card:hover{
+  border-color:rgba(255,80,230,.70);
+  box-shadow:
+    0 0 18px rgba(80,220,255,.28),
+    0 0 42px rgba(255,80,230,.20),
+    inset 0 0 18px rgba(142,238,255,.08);
+}
+
+/* ギャラリー重複整理後の見た目 */
+.gallery-item[data-category="chii"] img{
+  max-height:255px !important;
+}
+
+.gallery-item[data-category="mascot"] img{
+  max-height:245px !important;
+}
+
+.tabs button[data-filter="mascot"]::after{
+  content:" 2";
+  opacity:.75;
+  font-size:11px;
+}
+
+/* マスコット2枚時でも中央に綺麗に表示 */
+.gallery-track{
+  align-items:stretch;
+}
+
+@media(max-width:980px){
+  .support-logo-grid{
+    grid-template-columns:1fr;
+  }
+
+  .support-logo-card{
+    min-height:130px;
+  }
+}
