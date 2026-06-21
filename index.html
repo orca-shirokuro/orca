@@ -1,122 +1,221 @@
-<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>SHIROKURO ORCA | Official Website</title><link rel="stylesheet" href="style.css"></head>
-<body><div id="cursorGlow"></div><div id="preloader"><img src="assets/logo.png"><p>DEEP SEA LOADING...</p></div>
-<div class="ocean"><span class="light a"></span><span class="light b"></span><img class="whale" src="assets/deep-orca.svg"><span class="scan"></span></div><div id="bubbles"></div>
-<img class="extra-jelly ja" src="assets/jellyfish.svg" alt="">
-<img class="extra-jelly jb" src="assets/jellyfish.svg" alt="">
-<img class="extra-jelly jc" src="assets/jellyfish.svg" alt="">
-<header><a class="brand" href="#home"><img src="assets/logo.png"><span><b>SHIROKURO</b><small>ORCA OFFICIAL WEBSITE</small></span></a><button id="menu">☰</button><nav id="nav"><a href="#home">HOME</a><a href="#profile">PROFILE</a><a href="#schedule">SCHEDULE</a><a href="#news">NEWS</a><a href="#gallery">GALLERY</a><a href="#fan">FAN COMMUNITY</a><a href="#movies">MOVIES</a><a href="#goods">GOODS</a></nav></header>
-<main><section id="home" class="hero"><div class="hero-copy reveal"><p class="eyebrow">DEEP SEA STREAMING BASE</p><h1><span>SHIROKURO</span>ORCA</h1><p class="catch">— 人間になりたいただのシャチ —</p><p class="lead">深海からやってきたシャチ系配信者。<br>雑談とゲームを中心に、今日もあなたに会いに浮上中。</p><div class="pulse"></div>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHIROKURO ORCA | Official Website</title>
+  <meta name="description" content="白黒オルカ公式サイト。配信予定、プロフィール、ギャラリー、グッズ情報など。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <div class="next-stream-card">
-      <div class="ns-label">NEXT STREAM</div>
-      <div class="ns-main">
-        <span>06.21 SAT</span>
-        <b>21:00</b>
+<header class="site-header">
+  <a href="#home" class="brand">
+    <img src="assets/logo.png" alt="SHIROKURO ORCA" onerror="this.style.display='none'">
+    <span>
+      <strong>SHIROKURO</strong>
+      <small>ORCA OFFICIAL WEBSITE</small>
+    </span>
+  </a>
+
+  <nav class="global-nav">
+    <a href="#home">HOME</a>
+    <a href="#profile">PROFILE</a>
+    <a href="#schedule">SCHEDULE</a>
+    <a href="#news">NEWS</a>
+    <a href="#gallery">GALLERY</a>
+    <a href="#fan">FAN COMMUNITY</a>
+    <a href="#movies">MOVIES</a>
+    <a href="#goods">GOODS</a>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">DEEP SEA STREAMING BASE</p>
+      <h1>SHIROKURO<br>ORCA</h1>
+      <p class="tagline">— 人間になりたいただのシャチ —</p>
+      <p class="lead">深海からやってきたシャチ系配信者。<br>雑談とゲームを中心に、今日もあなたに会いに浮上中。</p>
+
+      <div class="next-stream">
+        <div>
+          <span>NEXT STREAM</span>
+          <strong>06.21 SAT</strong>
+          <p>雑談配信<br><small>まったり深海トーク</small></p>
+        </div>
+        <time>21:00</time>
       </div>
-      <div class="ns-title">雑談配信</div>
-      <div class="ns-sub">まったり深海トーク</div>
-    </div><div class="socials"><a href="https://web.iriam.app/s/user/uzA1OhNF3G?uuid=45efcd5b" target="_blank"><img class="link-logo" src="assets/icons/iriam.svg" alt=""><span>IRIAM</span></a><a href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank"><img class="link-logo" src="assets/icons/youtube.svg" alt=""><span>YouTube</span></a><a href="https://x.com/orca_whiteblack" target="_blank"><img class="link-logo" src="assets/icons/x.svg" alt=""><span>X</span></a><a href="https://www.tiktok.com/@orca_white.black" target="_blank"><img class="link-logo" src="assets/icons/tiktok.svg" alt=""><span>TikTok</span></a><a href="https://suzuri.jp/orca_White_Black" target="_blank"><img class="link-logo" src="assets/icons/suzuri.svg" alt=""><span>GOODS</span></a></div></div><div class="hero-visual reveal"><div class="ring"></div><div class="ring r2"></div><img id="mainCharacter" class="character" src="assets/orca.png" alt="白黒オルカ"><div class="character-switch"><button class="char-btn active" data-char="assets/orca.png">通常衣装</button><button class="char-btn" data-char="assets/orca-formal.png">黒スーツ</button></div></div><div class="scroll">SCROLL</div></section>
-<section class="grid"><article id="news" class="panel reveal"><h2>NEWS <small>X style</small></h2><div id="newsList"></div><a class="btn" href="https://x.com/orca_whiteblack" target="_blank">Xで最新情報を見る</a></article><article id="schedule" class="panel reveal"><h2>SCHEDULE <small>配信予定</small></h2><div id="scheduleList"></div></article><article id="profile" class="panel wide reveal"><h2>PROFILE <small>深海から浮上中</small></h2><div class="profile"><div><h3>白黒オルカ</h3><p>深海からやってきた、人間になりたいただのシャチ。雑談やゲーム配信を中心に活動中。おしゃべりが大好きで、たこやきを食べながらのんびり過ごす時間がお気に入り。</p></div><dl><div><dt>誕生日</dt><dd>10 / 29</dd></div><div><dt>好きなもの</dt><dd>たこやき</dd></div><div><dt>趣味</dt><dd>おしゃべり・ゲーム・寝ること</dd></div><div><dt>配信内容</dt><dd>雑談配信・ゲーム配信</dd></div></dl></div></article>
 
-<section id="unit" class="panel reveal unit-panel">
-  <h2>UNIT <small>Collaboration</small></h2>
-
-  <div class="unit-card">
-    <div class="unit-logo-wrap">
-      <img src="assets/unit/zeto-luka-logo.png" alt="ゼト×ルカ学習帳" class="unit-logo">
-    </div>
-
-    <div class="unit-members">
-      <div class="unit-member unit-zetton">
-        <img src="assets/unit/zetton.png" alt="ゼットン">
-        <span>ZETTON</span>
-      </div>
-
-      <div class="unit-cross">×</div>
-
-      <div class="unit-member unit-orca">
-        <img src="assets/orca.png" alt="白黒オルカ">
-        <span>SHIROKURO ORCA</span>
-      </div>
-    </div>
-
-    <p class="unit-copy">
-      ゼットン × 白黒オルカによるコラボユニット
-    </p>
-  </div>
-</section>
-<article id="fan" class="panel reveal"><h2>FAN COMMUNITY</h2><div class="fan"><div><small>FAN MARK</small><b>🤍∞🖤</b></div><div><small>FAN NAME</small><b>オルカの飼育員さん</b></div><div><small>FAN ART TAG</small><b>#おるかあーと</b></div></div><p>ファンアートは「#おるかあーと」を付けて投稿してね。</p><div class="fan-message">深海からやってきた白黒オルカです。<br>雑談やゲームを中心に、みんなと楽しい時間を作っています。<br>今日も会いに来てくれてありがとう。</div><a class="btn" href="https://x.com/search?q=%23%E3%81%8A%E3%82%8B%E3%81%8B%E3%81%82%E3%83%BC%E3%81%A8" target="_blank">タグを検索</a></article><article id="gallery" class="panel reveal"><h2>GALLERY <small>Coming updates</small></h2><p id="galleryCredit" class="gallery-credit" style="display:none;">
-      Illustration by
-      <a href="https://x.com/chi1pen" target="_blank" rel="noopener">ちーぺん。 @chi1pen</a>
-    </p>
-
-    <div class="gallery-tabs" role="tablist" aria-label="ギャラリー分類">
-      <button class="gallery-tab active" data-filter="all" type="button">ALL</button>
-      <button class="gallery-tab" data-filter="official" type="button">公式立ち絵</button>
-      <button class="gallery-tab" data-filter="chiipen" type="button">ちーぺん。</button>
-      <button class="gallery-tab" data-filter="mascot" type="button">マスコット</button>
-    </div>
-
-    <div class="gallery-slider-wrap">
-      <button class="gallery-arrow gallery-prev" type="button" aria-label="前へ">‹</button>
-      <div id="galleryGrid" class="gallery gallery-slider"></div>
-      <button class="gallery-arrow gallery-next" type="button" aria-label="次へ">›</button>
-    </div><p class="note">今後ギャラリー素材を追加予定。</p></article><article id="movies" class="panel reveal"><h2>MOVIES <small>YouTube / Coming Soon</small></h2><div id="movieGrid" class="movies"></div><a class="btn" href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank">YouTubeへ</a></article><article id="goods" class="panel goods reveal"><h2>OFFICIAL GOODS <small>SUZURI</small></h2>
-    <div class="goods-content goods-v24">
-      <div class="goods-v24-top">
-        <img class="suzuri-logo-main" src="assets/goods/suzuri-logo-white.png" alt="SUZURI">
-        <h3>白黒オルカ<br>公式グッズ発売中！</h3>
-        <a class="btn suzuri-shop-btn" href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">SHOPへ</a>
-      </div>
-      <div class="goods-v24-img">
-        <img src="assets/goods/suzuri-products.png" alt="白黒オルカ公式グッズ">
+      <div class="hero-links">
+        <a href="https://web.iriam.app/s/user/uZA10hNF3G?uuid=45efcd5b" target="_blank" rel="noopener">IRIAM</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://x.com/orca_whiteblack" target="_blank" rel="noopener">X</a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">GOODS</a>
       </div>
     </div>
-</article></section>
-<section id="sns" class="panel reveal sns-panel">
-  <h2>FOLLOW ME <small>SNS Links</small></h2>
-  <div class="sns-hub">
-    <p>白黒オルカの最新情報・配信告知はこちら</p>
-    <div class="sns-links">
-      <a class="sns-link" href="https://x.com/orca_whiteblack" target="_blank" rel="noopener">X</a>
-      <a class="sns-link" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
-      <a class="sns-link" href="https://web.iriam.app/s/user/uZA10hNF3G?uuid=45efcd5b" target="_blank" rel="noopener">IRIAM</a>
-      <a class="sns-link" href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
-      <a class="sns-link" href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">SUZURI</a>
-    </div>
-  </div>
-</section>
 
+    <div class="hero-visual">
+      <img class="hero-orca" src="assets/orca.png" alt="白黒オルカ立ち絵">
+      <div class="costume-buttons">
+        <button type="button">通常衣装</button>
+        <button type="button">黒スーツ</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-grid">
+
+    <article id="news" class="panel">
+      <h2>NEWS <small>X style</small></h2>
+      <ul class="news-list">
+        <li><time>2026.06.17</time><b>NEWS</b><span>公式サイト公開</span></li>
+        <li><time>2026.06.18</time><b>GALLERY</b><span>ギャラリー更新</span></li>
+        <li><time>2026.06.20</time><b>STREAM</b><span>初配信準備中</span></li>
+        <li><time>2026.06.22</time><b>SCHEDULE</b><span>スケジュール更新</span></li>
+        <li><time>2026.06.25</time><b>GOODS</b><span>グッズページ公開</span></li>
+      </ul>
+      <a class="btn" href="https://x.com/orca_whiteblack" target="_blank" rel="noopener">Xで最新情報を見る</a>
+    </article>
+
+    <article id="schedule" class="panel">
+      <h2>SCHEDULE <small>配信予定</small></h2>
+      <ul class="schedule-list">
+        <li><time>06.20 SAT　21:00</time><strong>雑談配信</strong><span>まったり深海トーク</span></li>
+        <li><time>06.22 MON　22:00</time><strong>ゲーム配信</strong><span>初見さん歓迎</span></li>
+        <li><time>06.25 THU　21:00</time><strong>企画枠</strong><span>Coming Soon</span></li>
+        <li><time>06.29 MON　未定</time><strong>ゲリラ浮上</strong><span>Xで告知</span></li>
+      </ul>
+    </article>
+
+    <article id="profile" class="panel">
+      <h2>PROFILE <small>深海から浮上中</small></h2>
+      <div class="profile-layout">
+        <div>
+          <h3>白黒オルカ</h3>
+          <p>深海からやってきた、人間になりたいただのシャチ。雑談やゲーム配信を中心に活動中。おしゃべりが大好きで、たこやきを食べながらのんびり過ごす時間がお気に入り。</p>
+        </div>
+        <dl class="profile-table">
+          <div><dt>誕生日</dt><dd>10 / 29</dd></div>
+          <div><dt>好きなもの</dt><dd>たこやき</dd></div>
+          <div><dt>趣味</dt><dd>おしゃべり・ゲーム・寝ること</dd></div>
+          <div><dt>配信内容</dt><dd>雑談配信・ゲーム配信</dd></div>
+        </dl>
+      </div>
+    </article>
+
+    <article id="unit" class="panel unit-panel">
+      <h2>UNIT <small>Collaboration</small></h2>
+      <div class="unit-card">
+        <img class="unit-logo" src="assets/unit/zeto-luka-logo.png" alt="ゼト×ルカ学習帳">
+        <div class="unit-members">
+          <figure class="member red">
+            <img src="assets/unit/zetton.png" alt="ゼットン">
+            <figcaption>ZETTON</figcaption>
+          </figure>
+          <span class="cross">×</span>
+          <figure class="member blue">
+            <img src="assets/orca.png" alt="白黒オルカ">
+            <figcaption>SHIROKURO ORCA</figcaption>
+          </figure>
+        </div>
+        <p>ゼットン × 白黒オルカによるコラボユニット</p>
+      </div>
+    </article>
+
+    <article id="fan" class="panel">
+      <h2>FAN COMMUNITY</h2>
+      <div class="fan-boxes">
+        <div><small>FAN MARK</small><strong>🤍∞🖤</strong></div>
+        <div><small>FAN NAME</small><strong>オルカの飼育員さん</strong></div>
+        <div><small>FAN ART TAG</small><strong>#おるかあーと</strong></div>
+      </div>
+      <p class="fan-text">ファンアートは「#おるかあーと」を付けて投稿してね。</p>
+      <div class="message">深海からやってきた白黒オルカです。<br>雑談やゲームを中心に、みんなと楽しい時間を作っています。<br>今日も会いに来てくれてありがとう。</div>
+      <a class="btn" href="https://x.com/search?q=%23%E3%81%8A%E3%82%8B%E3%81%8B%E3%81%82%E3%83%BC%E3%81%A8" target="_blank" rel="noopener">タグを検索</a>
+    </article>
+
+    <article id="gallery" class="panel">
+      <h2>GALLERY <small>Coming updates</small></h2>
+      <div class="tabs">
+        <button class="active" data-filter="all">ALL</button>
+        <button data-filter="official">公式立ち絵</button>
+        <button data-filter="chii">ちーぺん。</button>
+        <button data-filter="mascot">マスコット</button>
+      </div>
+      <div class="gallery-wrap">
+        <button class="slide prev" type="button">‹</button>
+        <div class="gallery-track">
+          <figure class="gallery-item official"><img src="assets/orca.png" alt="白黒オルカ立ち絵"><figcaption>公式立ち絵</figcaption></figure>
+          <figure class="gallery-item official"><img src="assets/orca-formal.png" alt="白黒オルカ黒スーツ"><figcaption>公式立ち絵</figcaption></figure>
+          <figure class="gallery-item chii"><img src="assets/gallery/chibi-orca-hood.png" alt="ミニキャラ"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item chii"><img src="assets/gallery/chibi-flower.png" alt="ミニキャラ"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item chii"><img src="assets/gallery/chibi-balloon.png" alt="ミニキャラ"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item mascot"><img src="assets/gallery/mascot-orca-summer.png" alt="マスコット"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img src="assets/gallery/mascot-orca-pair.png" alt="マスコット"><figcaption>マスコット</figcaption></figure>
+        </div>
+        <button class="slide next" type="button">›</button>
+      </div>
+      <p class="note">© SHIROKURO ORCA</p>
+    </article>
+
+    <article id="movies" class="panel">
+      <h2>MOVIES <small>YouTube / Coming Soon</small></h2>
+      <div class="movie-grid">
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="movie-card"><img src="assets/deep-orca.svg" alt=""><span>▶</span><strong>First Movie</strong><small>COMING SOON / --:--</small></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="movie-card"><img src="assets/orca.png" alt=""><span>▶</span><strong>Game Stream</strong><small>COMING SOON / --:--</small></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="movie-card"><img src="assets/logo.png" alt=""><span>▶</span><strong>Talk Stream</strong><small>COMING SOON / --:--</small></a>
+      </div>
+      <a class="btn" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTubeへ</a>
+    </article>
+
+    <article id="goods" class="panel">
+      <h2>OFFICIAL GOODS <small>SUZURI</small></h2>
+      <div class="goods-card">
+        <div class="goods-copy">
+          <img src="assets/goods/suzuri-logo-white.png" alt="SUZURI" onerror="this.style.display='none'">
+          <h3>白黒オルカ<br>公式グッズ発売中！</h3>
+          <a class="btn" href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">SHOPへ</a>
+        </div>
+        <div class="goods-image">
+          <img src="assets/goods/suzuri-products.png" alt="白黒オルカ公式グッズ">
+        </div>
+      </div>
+    </article>
+
+    <article id="sns" class="panel sns-panel">
+      <h2>FOLLOW ME <small>SNS Links</small></h2>
+      <p>白黒オルカの最新情報・配信告知はこちら</p>
+      <div class="sns-links">
+        <a href="https://x.com/orca_whiteblack" target="_blank" rel="noopener">X</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://web.iriam.app/s/user/uZA10hNF3G?uuid=45efcd5b" target="_blank" rel="noopener">IRIAM</a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">SUZURI</a>
+      </div>
+    </article>
+
+  </section>
 </main>
-<footer><img src="assets/logo.png"><b>SHIROKURO ORCA</b><div><a href="https://web.iriam.app/s/user/uzA1OhNF3G?uuid=45efcd5b" target="_blank">IRIAM</a><a href="https://x.com/orca_whiteblack" target="_blank">X</a><a href="https://www.youtube.com/channel/UCW4zQ8kVzc1AtdVZ9xfGdmQ" target="_blank">YouTube</a><a href="https://www.tiktok.com/@orca_white.black" target="_blank">TikTok</a><a href="https://suzuri.jp/orca_White_Black" target="_blank">SUZURI</a></div><small>© 2026 SHIROKURO ORCA. All Rights Reserved.</small></footer><button id="top">TOP</button><script src="script.js"></script>
-<script>
-(function(){
-  function buildFixedGrid(){
-    const ids = ["news","schedule","profile","unit","fan","gallery","movies","goods","sns"];
-    const nodes = ids.map(id => document.getElementById(id)).filter(Boolean);
-    if(nodes.length < 4) return;
 
-    let grid = document.getElementById("orca-fixed-grid");
-    if(!grid){
-      grid = document.createElement("section");
-      grid.id = "orca-fixed-grid";
-      grid.className = "orca-fixed-grid";
-      const first = nodes[0];
-      first.parentNode.insertBefore(grid, first);
-    }
+<footer class="footer">
+  <img src="assets/logo.png" alt="" onerror="this.style.display='none'">
+  <strong>SHIROKURO ORCA</strong>
+  <nav>
+    <a href="https://web.iriam.app/s/user/uZA10hNF3G?uuid=45efcd5b" target="_blank" rel="noopener">IRIAM</a>
+    <a href="https://x.com/orca_whiteblack" target="_blank" rel="noopener">X</a>
+    <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+    <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">SUZURI</a>
+  </nav>
+  <small>© 2026 SHIROKURO ORCA. All Rights Reserved.</small>
+</footer>
 
-    ids.forEach(id => {
-      const el = document.getElementById(id);
-      if(el && el.parentNode !== grid) grid.appendChild(el);
-    });
-  }
-
-  if(document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded", buildFixedGrid);
-  }else{
-    buildFixedGrid();
-  }
-})();
-</script>
-
-</body></html>
+<button class="to-top" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})">TOP</button>
+<script src="script.js"></script>
+</body>
+</html>
