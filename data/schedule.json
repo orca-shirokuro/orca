@@ -1,26 +1,51 @@
 [
   {
-    "date": "06.20 SAT",
-    "time": "21:00",
-    "title": "雑談配信",
-    "desc": "まったり深海トーク"
+    "day": "MON",
+    "date": "06/24",
+    "time": "おやすみ",
+    "title": "OFF",
+    "type": "off"
   },
   {
-    "date": "06.22 MON",
+    "day": "TUE",
+    "date": "06/25",
     "time": "22:00",
     "title": "ゲーム配信",
-    "desc": "初見さん歓迎"
+    "type": "game"
   },
   {
-    "date": "06.25 THU",
+    "day": "WED",
+    "date": "06/26",
+    "time": "21:00",
+    "title": "雑談配信",
+    "type": "talk"
+  },
+  {
+    "day": "THU",
+    "date": "06/27",
     "time": "21:00",
     "title": "企画枠",
-    "desc": "Coming Soon"
+    "type": "event"
   },
   {
-    "date": "06.29 MON",
-    "time": "未定",
-    "title": "ゲリラ浮上",
-    "desc": "Xで告知"
+    "day": "FRI",
+    "date": "06/28",
+    "time": "22:00",
+    "title": "ゲーム配信",
+    "type": "game"
+  },
+  {
+    "day": "SAT",
+    "date": "06/29",
+    "time": "21:00",
+    "title": "メイン配信",
+    "type": "main"
+  },
+  {
+    "day": "SUN",
+    "date": "06/30",
+    "time": "おやすみ",
+    "title": "OFF",
+    "type": "off"
   }
 ]

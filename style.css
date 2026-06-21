@@ -680,3 +680,96 @@ h1{
     max-height:520px !important;
   }
 }
+
+
+/* ===== V31 WEEKLY SCHEDULE EASY EDIT ===== */
+.weekly-schedule{
+  display:grid;
+  gap:10px;
+}
+
+.weekly-row{
+  display:grid;
+  grid-template-columns:92px 1fr;
+  gap:12px;
+  align-items:center;
+  padding:12px;
+  border:1px solid rgba(142,238,255,.22);
+  border-radius:14px;
+  background:
+    linear-gradient(135deg, rgba(0,45,90,.40), rgba(0,12,30,.58));
+  box-shadow:inset 0 0 18px rgba(0,190,255,.04);
+}
+
+.weekly-row.main{
+  border-color:rgba(142,238,255,.48);
+  box-shadow:
+    0 0 22px rgba(0,210,255,.18),
+    inset 0 0 22px rgba(0,190,255,.08);
+}
+
+.weekly-row.off{
+  opacity:.58;
+}
+
+.weekly-date{
+  display:grid;
+  place-items:center;
+  min-height:58px;
+  border-radius:12px;
+  background:rgba(0,18,42,.62);
+  border:1px solid rgba(142,238,255,.18);
+}
+
+.weekly-date b{
+  font-family:Cinzel,serif;
+  font-size:19px;
+  letter-spacing:.08em;
+}
+
+.weekly-date span{
+  color:#8eeeff;
+  font-size:12px;
+  font-weight:900;
+}
+
+.weekly-info{
+  min-width:0;
+}
+
+.weekly-time{
+  color:#8eeeff;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.weekly-title{
+  display:block;
+  margin-top:3px;
+  font-size:18px;
+  font-weight:900;
+  color:#fff;
+}
+
+.schedule-note{
+  margin:14px 0 0;
+  color:#b7d9e8;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.7;
+}
+
+@media(max-width:640px){
+  .weekly-row{
+    grid-template-columns:74px 1fr;
+    gap:10px;
+    padding:10px;
+  }
+  .weekly-date b{
+    font-size:16px;
+  }
+  .weekly-title{
+    font-size:16px;
+  }
+}

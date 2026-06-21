@@ -113,3 +113,50 @@ document.querySelectorAll(".tabs button").forEach(btn => {
 });
 
 updateGalleryByCategory(document.querySelector(".tabs button.active")?.dataset.filter || "all");
+
+
+// ===== V31 WEEKLY SCHEDULE EASY EDIT =====
+// 編集する場所：data/schedule.json
+async function loadWeeklySchedule(){
+  const root = document.getElementById("weeklySchedule");
+  if(!root) return;
+
+  const fallback = [
+    {day:"MON", date:"06/24", time:"おやすみ", title:"OFF", type:"off"},
+    {day:"TUE", date:"06/25", time:"22:00", title:"ゲーム配信", type:"game"},
+    {day:"WED", date:"06/26", time:"21:00", title:"雑談配信", type:"talk"},
+    {day:"THU", date:"06/27", time:"21:00", title:"企画枠", type:"event"},
+    {day:"FRI", date:"06/28", time:"22:00", title:"ゲーム配信", type:"game"},
+    {day:"SAT", date:"06/29", time:"21:00", title:"メイン配信", type:"main"},
+    {day:"SUN", date:"06/30", time:"おやすみ", title:"OFF", type:"off"}
+  ];
+
+  let items = fallback;
+  try{
+    const res = await fetch("data/schedule.json", {cache:"no-store"});
+    if(res.ok) items = await res.json();
+  }catch(e){}
+
+  const icon = {
+    off:"💤",
+    game:"🎮",
+    talk:"🗣️",
+    event:"✨",
+    main:"🐋"
+  };
+
+  root.innerHTML = items.map(item => `
+    <div class="weekly-row ${item.type || ""}">
+      <div class="weekly-date">
+        <b>${item.day}</b>
+        <span>${item.date}</span>
+      </div>
+      <div class="weekly-info">
+        <span class="weekly-time">${icon[item.type] || "🌊"} ${item.time}</span>
+        <strong class="weekly-title">${item.title}</strong>
+      </div>
+    </div>
+  `).join("");
+}
+
+loadWeeklySchedule();
