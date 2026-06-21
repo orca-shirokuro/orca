@@ -1568,3 +1568,168 @@ body.formal-mode .ring{
     margin:0 auto !important;
   }
 }
+
+
+/* ===== V18 GOODS RATIO FIX ===== */
+#goods .goods-wide{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  grid-template-columns:240px minmax(0, 1fr) !important;
+  gap:22px !important;
+  align-items:center !important;
+  min-height:310px !important;
+  padding:22px !important;
+  border:1px solid rgba(120,220,255,.30);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 72% 48%, rgba(130,230,255,.22), transparent 36%),
+    linear-gradient(135deg, rgba(0,48,90,.56), rgba(0,8,24,.82));
+  box-shadow:
+    0 0 44px rgba(0,190,255,.20),
+    inset 0 0 36px rgba(0,200,255,.08);
+  overflow:hidden;
+}
+
+#goods .goods-wide::before{
+  content:"GOODS";
+  position:absolute;
+  right:26px;
+  top:18px;
+  font-family:Cinzel,serif;
+  font-size:92px;
+  font-weight:900;
+  letter-spacing:.10em;
+  color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+
+#goods .goods-wide-copy{
+  position:relative;
+  z-index:3;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  min-height:260px !important;
+  padding:20px 16px !important;
+  border:1px solid rgba(120,220,255,.28);
+  border-radius:24px;
+  background:rgba(0,18,42,.56);
+  box-shadow:inset 0 0 28px rgba(0,190,255,.08);
+  text-align:center !important;
+}
+
+#goods .goods-wide-copy .suzuri-logo-main{
+  display:block !important;
+  width:178px !important;
+  height:auto !important;
+  margin:0 0 22px !important;
+  filter:drop-shadow(0 0 16px rgba(0,220,255,.45)) !important;
+}
+
+#goods .goods-wide-copy h3{
+  margin:0 0 24px !important;
+  color:#fff !important;
+  font-size:clamp(25px, 2.25vw, 36px) !important;
+  line-height:1.22 !important;
+  letter-spacing:.03em !important;
+  text-align:center !important;
+  white-space:normal !important;
+  writing-mode:horizontal-tb !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
+  text-shadow:0 0 18px rgba(0,210,255,.38) !important;
+}
+
+#goods .goods-wide-copy .suzuri-shop-btn{
+  width:160px !important;
+  height:48px !important;
+  margin:0 auto !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+  font-size:15px !important;
+  font-weight:900 !important;
+  letter-spacing:.08em !important;
+  box-shadow:0 0 28px rgba(0,210,255,.24) !important;
+}
+
+#goods .goods-wide-image{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  place-items:center !important;
+  min-width:0 !important;
+  min-height:270px !important;
+  padding:12px !important;
+  border:1px solid rgba(120,220,255,.26);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(150,235,255,.16), transparent 48%),
+    rgba(0,12,30,.44);
+  overflow:hidden;
+}
+
+#goods .goods-wide-image::after{
+  content:"";
+  position:absolute;
+  inset:auto 10% 4% 10%;
+  height:42%;
+  background:radial-gradient(ellipse, rgba(0,210,255,.20), transparent 70%);
+  filter:blur(18px);
+  pointer-events:none;
+}
+
+#goods .goods-wide-image img{
+  position:relative;
+  z-index:2;
+  width:100% !important;
+  max-width:760px !important;
+  max-height:295px !important;
+  object-fit:contain !important;
+  border-radius:18px !important;
+  transform:none !important;
+  filter:
+    drop-shadow(0 16px 30px rgba(0,0,0,.40))
+    drop-shadow(0 0 22px rgba(0,200,255,.14)) !important;
+  transition:.3s ease !important;
+}
+
+#goods .goods-wide-image:hover img{
+  transform:scale(1.035) !important;
+}
+
+/* hide older goods blocks/remnants */
+#goods .goods-badge,
+#goods .goods-tags,
+#goods .goods-hero-card,
+#goods .goods-clean-copy,
+#goods .goods-unified,
+#goods .goods-product-stage,
+#goods .goods-unified-text,
+#goods .goods-unified-image,
+#goods .goods-banner{
+  display:none !important;
+}
+
+@media(max-width:900px){
+  #goods .goods-wide{
+    grid-template-columns:1fr !important;
+    padding:18px !important;
+  }
+  #goods .goods-wide::before{
+    font-size:60px;
+    right:18px;
+  }
+  #goods .goods-wide-copy{
+    min-height:auto !important;
+  }
+  #goods .goods-wide-copy .suzuri-logo-main{
+    width:200px !important;
+  }
+  #goods .goods-wide-image{
+    min-height:230px !important;
+  }
+}
