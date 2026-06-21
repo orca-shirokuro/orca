@@ -1733,3 +1733,135 @@ body.formal-mode .ring{
     min-height:230px !important;
   }
 }
+
+
+/* ===== V19 UNIT CARD : ゼト×ルカ学習帳 ===== */
+.unit-panel{ overflow:hidden; }
+
+.unit-card{
+  position:relative;
+  z-index:2;
+  padding:24px;
+  border:1px solid rgba(120,220,255,.30);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 18% 28%, rgba(255,50,60,.18), transparent 30%),
+    radial-gradient(circle at 78% 35%, rgba(120,230,255,.20), transparent 34%),
+    linear-gradient(135deg, rgba(22,10,20,.72), rgba(0,10,28,.84));
+  box-shadow:
+    0 0 42px rgba(0,190,255,.16),
+    inset 0 0 36px rgba(0,200,255,.07);
+}
+
+.unit-card::before{
+  content:"ZETO × LUKA";
+  position:absolute;
+  right:22px;
+  top:16px;
+  font-family:Cinzel,serif;
+  font-size:64px;
+  font-weight:900;
+  letter-spacing:.08em;
+  color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+
+.unit-logo-wrap{
+  display:grid;
+  place-items:center;
+  margin:0 auto 16px;
+  padding:10px;
+}
+
+.unit-logo{
+  width:min(100%, 560px);
+  max-height:180px;
+  object-fit:contain;
+  filter:
+    drop-shadow(0 0 18px rgba(255,60,60,.24))
+    drop-shadow(0 0 20px rgba(120,230,255,.20));
+  transition:.3s ease;
+}
+
+.unit-logo:hover{ transform:scale(1.03); }
+
+.unit-members{
+  display:grid;
+  grid-template-columns:1fr 58px 1fr;
+  gap:14px;
+  align-items:end;
+  margin-top:6px;
+}
+
+.unit-member{
+  position:relative;
+  min-height:280px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  border:1px solid rgba(120,220,255,.22);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 50% 60%, rgba(255,255,255,.08), transparent 46%),
+    rgba(0,14,34,.46);
+  overflow:hidden;
+}
+
+.unit-member img{
+  position:relative;
+  z-index:2;
+  max-width:100%;
+  max-height:310px;
+  object-fit:contain;
+  transition:.3s ease;
+}
+
+.unit-member:hover img{ transform:translateY(-4px) scale(1.035); }
+
+.unit-member span{
+  position:absolute;
+  left:12px;
+  bottom:10px;
+  z-index:4;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.12em;
+  color:#fff;
+  background:rgba(0,14,34,.68);
+  border:1px solid rgba(255,255,255,.18);
+}
+
+.unit-zetton img{ filter:drop-shadow(0 0 20px rgba(255,60,60,.38)); }
+.unit-orca img{ filter:drop-shadow(0 0 20px rgba(120,230,255,.38)); }
+
+.unit-cross{
+  align-self:center;
+  justify-self:center;
+  font-size:44px;
+  font-weight:900;
+  color:#fff;
+  text-shadow:
+    0 0 14px rgba(255,255,255,.36),
+    0 0 22px rgba(0,210,255,.22);
+}
+
+.unit-copy{
+  margin:18px auto 0;
+  max-width:760px;
+  text-align:center;
+  color:#d9f5ff;
+  font-weight:800;
+  line-height:1.8;
+  letter-spacing:.04em;
+}
+
+@media(max-width:800px){
+  .unit-card{ padding:18px; }
+  .unit-card::before{ font-size:40px; }
+  .unit-members{ grid-template-columns:1fr; }
+  .unit-cross{ font-size:34px; }
+  .unit-member{ min-height:240px; }
+  .unit-member img{ max-height:270px; }
+}
