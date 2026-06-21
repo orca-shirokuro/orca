@@ -1,8 +1,6 @@
-V26 FEATURE RESTORE:
-- 立ち絵を大きく表示
-- 通常衣装 / 黒スーツ切り替えを復活
-- カーソル追従の光を復活
-- ギャラリー画像数を復活
-- 各リンクのロゴを復活
-- 右クリック/ドラッグ/選択抑制と©表示を追加
+V27 Gallery Category Fix:
+- 公式立ち絵：orca.png / orca-formal.png
+- ちーぺん。：chibi-* 系
+- マスコット：mascot-orca-* / mini-* 系
+- フィルター処理を data-category で安定化
 ZIPの中身だけをGitHub直下へ上書きしてください。

@@ -490,3 +490,21 @@ h1{
   .hero-orca{max-height:440px !important;transform:scale(1.05);}
   .cursor-light{display:none;}
 }
+
+
+/* ===== V27 GALLERY CATEGORY FIX ===== */
+.gallery-item[hidden]{
+  display:none !important;
+}
+
+.gallery-item.official figcaption{
+  background:linear-gradient(90deg, rgba(0,90,150,.82), rgba(0,10,25,.78));
+}
+
+.gallery-item.chii figcaption{
+  background:linear-gradient(90deg, rgba(80,120,190,.82), rgba(0,10,25,.78));
+}
+
+.gallery-item.mascot figcaption{
+  background:linear-gradient(90deg, rgba(0,150,170,.78), rgba(0,10,25,.78));
+}

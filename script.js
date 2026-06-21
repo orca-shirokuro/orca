@@ -59,3 +59,25 @@ document.addEventListener("selectstart", (e) => {
 document.querySelectorAll("img").forEach(img => {
   img.setAttribute("draggable", "false");
 });
+
+
+// V27 gallery category fix
+const galleryTrackV27 = document.querySelector(".gallery-track");
+document.querySelectorAll(".tabs button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const filter = btn.dataset.filter;
+    document.querySelectorAll(".tabs button").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    document.querySelectorAll(".gallery-item").forEach(item => {
+      const category = item.dataset.category;
+      const show = filter === "all" || category === filter;
+      item.hidden = !show;
+      item.style.display = show ? "" : "none";
+    });
+
+    if (galleryTrackV27) {
+      galleryTrackV27.scrollTo({ left: 0, behavior: "smooth" });
+    }
+  });
+});
