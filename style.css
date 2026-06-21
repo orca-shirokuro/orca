@@ -1865,3 +1865,116 @@ body.formal-mode .ring{
   .unit-member{ min-height:240px; }
   .unit-member img{ max-height:270px; }
 }
+
+
+/* ===== V20 UNIT BALANCE FIX ===== */
+/* UNITカードを横長・低めにして全体バランス改善 */
+.unit-panel{
+  align-self:start;
+}
+
+.unit-panel .unit-card{
+  padding:18px !important;
+  border-radius:24px !important;
+  min-height:auto !important;
+}
+
+.unit-card::before{
+  font-size:44px !important;
+  right:16px !important;
+  top:12px !important;
+  opacity:.8 !important;
+}
+
+.unit-logo-wrap{
+  margin:0 auto 10px !important;
+  padding:4px !important;
+}
+
+.unit-logo{
+  width:min(100%, 380px) !important;
+  max-height:110px !important;
+  object-fit:contain !important;
+}
+
+.unit-members{
+  grid-template-columns:1fr 42px 1fr !important;
+  gap:10px !important;
+  align-items:center !important;
+  margin-top:0 !important;
+}
+
+.unit-member{
+  min-height:190px !important;
+  height:210px !important;
+  border-radius:18px !important;
+  background:
+    radial-gradient(circle at 50% 56%, rgba(255,255,255,.08), transparent 45%),
+    rgba(0,14,34,.42) !important;
+}
+
+.unit-member img{
+  max-height:205px !important;
+  max-width:88% !important;
+  object-fit:contain !important;
+}
+
+.unit-zetton img{
+  transform:scale(1.05);
+}
+
+.unit-orca img{
+  transform:scale(1.02);
+}
+
+.unit-member:hover img{
+  transform:translateY(-3px) scale(1.06) !important;
+}
+
+.unit-member span{
+  left:10px !important;
+  bottom:8px !important;
+  font-size:10px !important;
+  padding:5px 8px !important;
+}
+
+.unit-cross{
+  font-size:34px !important;
+}
+
+.unit-copy{
+  margin:12px auto 0 !important;
+  font-size:13px !important;
+  line-height:1.6 !important;
+}
+
+/* FAN COMMUNITYと高さが合いやすいように余白調整 */
+#fan,
+.fan-panel{
+  align-self:start;
+}
+
+/* スマホは縦並び */
+@media(max-width:800px){
+  .unit-logo{
+    width:min(100%, 420px) !important;
+    max-height:130px !important;
+  }
+
+  .unit-members{
+    grid-template-columns:1fr !important;
+  }
+
+  .unit-cross{
+    font-size:30px !important;
+  }
+
+  .unit-member{
+    height:230px !important;
+    min-height:230px !important;
+  }
+
+  .unit-member img{
+    max-height:225px !important;
+  }
+}

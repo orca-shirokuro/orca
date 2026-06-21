@@ -1,7 +1,6 @@
-V19 Unit Card:
-- ゼト×ルカ学習帳ユニットカードを追加
-- ユニットロゴを assets/unit/zeto-luka-logo.png に追加
-- ゼットン立ち絵を assets/unit/zetton.png に追加
-- 白黒オルカ立ち絵と横並び表示
-- V18 GOODS修正・ギャラリー保存対策も継続
+V20 Unit Balance Fix:
+- UNITカードの高さを抑えて全体バランスを改善
+- ロゴを小さめに調整
+- ゼットン/白黒オルカ立ち絵を見やすい比率に調整
+- FAN COMMUNITY横でも崩れにくいレイアウト
 ZIPの中身だけをGitHub直下へ上書きしてください。
