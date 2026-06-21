@@ -999,3 +999,188 @@ body.formal-mode .ring{
     text-align:center;
   }
 }
+
+
+/* ===== V13 GOODS PREMIUM UPGRADE ===== */
+.goods-premium{
+  grid-template-columns: .82fr 1.35fr !important;
+  gap:30px !important;
+  min-height:380px;
+}
+
+.goods-hero-card{
+  position:relative;
+  z-index:2;
+  padding:28px;
+  border:1px solid rgba(120,220,255,.36);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(130,235,255,.20), transparent 34%),
+    linear-gradient(145deg, rgba(3,28,62,.86), rgba(0,8,24,.70));
+  box-shadow:
+    0 0 38px rgba(0,190,255,.20),
+    inset 0 0 34px rgba(0,190,255,.08);
+  overflow:hidden;
+}
+
+.goods-hero-card::before{
+  content:"";
+  position:absolute;
+  inset:auto -30% -45% -30%;
+  height:180px;
+  background:radial-gradient(ellipse, rgba(0,210,255,.30), transparent 68%);
+  pointer-events:none;
+}
+
+.goods-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:16px;
+  padding:7px 12px;
+  border:1px solid rgba(140,240,255,.46);
+  border-radius:999px;
+  color:#91f2ff;
+  background:rgba(0,120,210,.14);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.18em;
+}
+
+.goods-premium .suzuri-logo-main{
+  width:min(250px,82%) !important;
+  margin:0 0 18px !important;
+  filter:drop-shadow(0 0 18px rgba(0,220,255,.50));
+}
+
+.goods-hero-card h3{
+  margin:0 0 14px;
+  font-size:clamp(30px,4vw,48px);
+  line-height:1.14;
+  letter-spacing:.02em;
+  color:#fff;
+  text-shadow:
+    0 0 18px rgba(0,210,255,.42),
+    0 0 34px rgba(0,120,255,.22);
+}
+
+.goods-hero-card p{
+  margin:0 0 18px;
+  color:#d9f4ff;
+  line-height:1.9;
+  font-weight:800;
+}
+
+.goods-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:18px 0 22px;
+}
+
+.goods-tags span{
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid rgba(120,220,255,.25);
+  background:rgba(0,34,70,.62);
+  color:#c9f7ff;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.goods-product-stage{
+  position:relative;
+  display:grid;
+  place-items:center;
+  min-height:360px;
+  padding:22px;
+  border:1px solid rgba(120,220,255,.34);
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 50% 52%, rgba(160,245,255,.25), transparent 34%),
+    radial-gradient(circle at 80% 15%, rgba(0,140,255,.18), transparent 28%),
+    linear-gradient(135deg, rgba(0,35,75,.72), rgba(0,7,20,.86));
+  box-shadow:
+    0 0 44px rgba(0,190,255,.24),
+    inset 0 0 44px rgba(0,200,255,.08);
+  overflow:hidden;
+}
+
+.goods-product-stage::before{
+  content:"GOODS";
+  position:absolute;
+  right:-18px;
+  top:14px;
+  font-family:Cinzel,serif;
+  font-size:88px;
+  font-weight:900;
+  letter-spacing:.08em;
+  color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+
+.goods-product-stage::after{
+  content:"";
+  position:absolute;
+  width:78%;
+  height:34%;
+  left:11%;
+  bottom:10%;
+  border-radius:50%;
+  background:radial-gradient(ellipse, rgba(0,210,255,.24), transparent 70%);
+  filter:blur(14px);
+  pointer-events:none;
+}
+
+.goods-product-stage .stage-glow{
+  position:absolute;
+  inset:8%;
+  border:1px solid rgba(140,240,255,.18);
+  border-radius:50%;
+  box-shadow:0 0 80px rgba(0,210,255,.18);
+  pointer-events:none;
+}
+
+.goods-product-stage img{
+  position:relative;
+  z-index:2;
+  width:min(100%, 720px);
+  max-height:340px;
+  object-fit:contain;
+  border-radius:20px;
+  transform:scale(1.06);
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.38),
+    0 0 32px rgba(0,190,255,.22);
+  transition:.35s ease;
+}
+
+.goods-product-stage:hover img{
+  transform:scale(1.10) translateY(-4px);
+}
+
+.goods-premium .suzuri-shop-btn{
+  min-width:190px;
+  min-height:52px;
+  font-size:15px;
+  box-shadow:0 0 28px rgba(0,210,255,.26);
+}
+
+@media(max-width:900px){
+  .goods-premium{
+    grid-template-columns:1fr !important;
+  }
+  .goods-hero-card{
+    text-align:center;
+  }
+  .goods-premium .suzuri-logo-main{
+    margin-inline:auto !important;
+  }
+  .goods-tags{
+    justify-content:center;
+  }
+  .goods-product-stage img{
+    max-height:none;
+  }
+}
