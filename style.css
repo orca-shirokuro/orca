@@ -2234,3 +2234,274 @@ main,
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* ===== V22 FULL LAYOUT REBUILD ===== */
+
+/* 2列を安定化：PROFILE | UNIT / FAN | GALLERY / MOVIES | GOODS / SNS full */
+@media(min-width:901px){
+  main:has(#profile),
+  .main:has(#profile),
+  .sections:has(#profile),
+  .content:has(#profile),
+  .dashboard:has(#profile){
+    display:grid !important;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+    gap:18px !important;
+    align-items:start !important;
+  }
+
+  #profile{ order:1 !important; }
+  #unit{ order:2 !important; }
+  #fan{ order:3 !important; }
+  #gallery{ order:4 !important; }
+  #movies{ order:5 !important; }
+  #goods{ order:6 !important; }
+  #sns{ order:7 !important; grid-column:1 / -1 !important; }
+
+  #profile, #unit{ min-height:390px !important; }
+  #fan, #gallery{ min-height:420px !important; }
+  #movies, #goods{ min-height:390px !important; }
+}
+
+/* UNITをコンパクトに揃える */
+#unit .unit-card{
+  min-height:310px !important;
+  padding:18px !important;
+}
+
+#unit .unit-logo{
+  width:min(100%, 380px) !important;
+  max-height:105px !important;
+}
+
+#unit .unit-members{
+  grid-template-columns:1fr 42px 1fr !important;
+  gap:10px !important;
+}
+
+#unit .unit-member{
+  height:195px !important;
+  min-height:195px !important;
+  border-radius:18px !important;
+}
+
+#unit .unit-member img{
+  max-height:190px !important;
+  max-width:88% !important;
+}
+
+#unit .unit-cross{
+  font-size:34px !important;
+}
+
+#unit .unit-copy{
+  margin-top:10px !important;
+  font-size:13px !important;
+  line-height:1.6 !important;
+}
+
+/* GOODS V22: 縦積みにしてはみ出し防止、カード感UP */
+#goods .goods-v22{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:14px !important;
+  padding:18px !important;
+  border:1px solid rgba(120,220,255,.30);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 50% 70%, rgba(130,230,255,.16), transparent 38%),
+    linear-gradient(135deg, rgba(0,42,82,.55), rgba(0,8,24,.82));
+  box-shadow:
+    0 0 38px rgba(0,190,255,.18),
+    inset 0 0 32px rgba(0,200,255,.07);
+  overflow:hidden;
+}
+
+#goods .goods-v22::before{
+  content:"GOODS";
+  position:absolute;
+  right:18px;
+  top:8px;
+  font-family:Cinzel,serif;
+  font-size:72px;
+  font-weight:900;
+  letter-spacing:.10em;
+  color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+
+#goods .goods-v22-head{
+  position:relative;
+  z-index:3;
+  display:grid !important;
+  grid-template-columns:160px 1fr 140px !important;
+  gap:14px !important;
+  align-items:center !important;
+  padding:14px !important;
+  border:1px solid rgba(120,220,255,.24);
+  border-radius:18px;
+  background:rgba(0,18,42,.50);
+}
+
+#goods .goods-v22-head .suzuri-logo-main{
+  width:145px !important;
+  margin:0 !important;
+  display:block !important;
+  filter:drop-shadow(0 0 14px rgba(0,220,255,.42)) !important;
+}
+
+#goods .goods-v22-head h3{
+  margin:0 !important;
+  color:#fff !important;
+  font-size:clamp(20px, 2vw, 30px) !important;
+  line-height:1.22 !important;
+  letter-spacing:.04em !important;
+  white-space:normal !important;
+  writing-mode:horizontal-tb !important;
+  word-break:keep-all !important;
+  text-align:left !important;
+  text-shadow:0 0 18px rgba(0,210,255,.38) !important;
+}
+
+#goods .goods-v22-head .suzuri-shop-btn{
+  width:130px !important;
+  height:44px !important;
+  margin:0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+  font-size:14px !important;
+  font-weight:900 !important;
+  letter-spacing:.08em !important;
+  box-shadow:0 0 24px rgba(0,210,255,.22) !important;
+}
+
+#goods .goods-v22-image{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  place-items:center !important;
+  height:230px !important;
+  padding:12px !important;
+  border:1px solid rgba(120,220,255,.25);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(150,235,255,.14), transparent 50%),
+    rgba(0,12,30,.42);
+  overflow:hidden;
+}
+
+#goods .goods-v22-image img{
+  position:relative;
+  z-index:2;
+  width:100% !important;
+  max-width:620px !important;
+  max-height:210px !important;
+  object-fit:contain !important;
+  border-radius:16px !important;
+  filter:
+    drop-shadow(0 14px 28px rgba(0,0,0,.38))
+    drop-shadow(0 0 20px rgba(0,200,255,.14)) !important;
+  transition:.3s ease !important;
+}
+
+#goods .goods-v22-image:hover img{
+  transform:scale(1.03) !important;
+}
+
+/* 古いGOODS要素は非表示 */
+#goods .goods-badge,
+#goods .goods-tags,
+#goods .goods-hero-card,
+#goods .goods-clean-copy,
+#goods .goods-unified,
+#goods .goods-product-stage,
+#goods .goods-unified-text,
+#goods .goods-unified-image,
+#goods .goods-banner,
+#goods .goods-wide,
+#goods .goods-final{
+  display:none !important;
+}
+
+/* SNS HUB */
+.sns-panel{
+  text-align:center;
+}
+
+.sns-hub{
+  padding:26px;
+  border:1px solid rgba(120,220,255,.28);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(130,230,255,.14), transparent 36%),
+    rgba(0,14,34,.54);
+  box-shadow:inset 0 0 32px rgba(0,200,255,.06);
+}
+
+.sns-hub p{
+  margin:0 0 18px;
+  color:#d9f5ff;
+  font-weight:800;
+  letter-spacing:.05em;
+}
+
+.sns-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:center;
+}
+
+.sns-link{
+  min-width:128px;
+  padding:13px 18px;
+  border:1px solid rgba(120,220,255,.36);
+  border-radius:16px;
+  background:rgba(0,38,72,.54);
+  color:#fff;
+  text-decoration:none;
+  font-weight:900;
+  letter-spacing:.08em;
+  box-shadow:0 0 18px rgba(0,210,255,.12);
+  transition:.25s ease;
+}
+
+.sns-link:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 26px rgba(0,210,255,.26);
+}
+
+/* スマホ対応 */
+@media(max-width:900px){
+  main:has(#profile),
+  .main:has(#profile),
+  .sections:has(#profile),
+  .content:has(#profile),
+  .dashboard:has(#profile){
+    display:block !important;
+  }
+
+  #goods .goods-v22-head{
+    grid-template-columns:1fr !important;
+    text-align:center !important;
+    justify-items:center !important;
+  }
+
+  #goods .goods-v22-head h3{
+    text-align:center !important;
+  }
+
+  #goods .goods-v22-image{
+    height:auto !important;
+    min-height:220px !important;
+  }
+
+  #unit .unit-members{
+    grid-template-columns:1fr !important;
+  }
+}
