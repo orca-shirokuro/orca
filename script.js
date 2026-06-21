@@ -160,3 +160,42 @@ async function loadWeeklySchedule(){
 }
 
 loadWeeklySchedule();
+
+
+// ===== V32 NEON / BUBBLE EFFECT =====
+const v32Light = document.querySelector(".cursor-light");
+window.addEventListener("pointermove", (e) => {
+  if(!v32Light) return;
+  v32Light.style.left = e.clientX + "px";
+  v32Light.style.top = e.clientY + "px";
+});
+
+function spawnClickBubbles(x, y){
+  const count = 8;
+  for(let i = 0; i < count; i++){
+    const bubble = document.createElement("span");
+    bubble.className = "click-bubble";
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 26 + Math.random() * 42;
+    const up = 22 + Math.random() * 42;
+    bubble.style.left = x + "px";
+    bubble.style.top = y + "px";
+    bubble.style.setProperty("--x", Math.cos(angle) * dist + "px");
+    bubble.style.setProperty("--y", (Math.sin(angle) * dist - up) + "px");
+    bubble.style.width = bubble.style.height = (6 + Math.random() * 10) + "px";
+    document.body.appendChild(bubble);
+    setTimeout(() => bubble.remove(), 780);
+  }
+}
+
+document.addEventListener("click", (e) => {
+  spawnClickBubbles(e.clientX, e.clientY);
+});
+
+// カードやボタンをクリックした時に少し強く光る
+document.querySelectorAll(".panel, .btn, .hero-links a, .sns-links a, .tabs button").forEach(el => {
+  el.addEventListener("click", () => {
+    el.classList.add("flash-glow");
+    setTimeout(() => el.classList.remove("flash-glow"), 280);
+  });
+});

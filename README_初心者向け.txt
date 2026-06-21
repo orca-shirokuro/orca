@@ -19,5 +19,12 @@ talk  = 雑談配信
 event = 企画枠
 main  = メイン配信
 
+■ グッズの文章を変えたい時
+index.html の GOODS の中にある
+「キーホルダー・マグカップ・アクスタ・ステッカー・缶バッジ」
+の部分だけ変えればOKです。
+
+■ 商品画像を変えたい時
+assets/goods/suzuri-products.png を同じ名前で差し替えます。
+
 編集したら Commit changes を押すだけです。
-画像を作り直す必要はありません。
