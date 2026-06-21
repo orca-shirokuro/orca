@@ -386,3 +386,107 @@ h1{
   h1{font-size:clamp(58px,16vw,96px) !important;}
   .goods-card{grid-template-columns:1fr !important;}
 }
+
+
+/* ===== V26 RESTORE FEATURES ===== */
+.cursor-light{
+  position:fixed;
+  left:0;
+  top:0;
+  width:360px;
+  height:360px;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:9999;
+  transform:translate(-50%,-50%);
+  background:radial-gradient(circle, rgba(130,235,255,.18) 0%, rgba(0,180,255,.08) 32%, transparent 68%);
+  mix-blend-mode:screen;
+  opacity:.8;
+  transition:opacity .2s ease;
+}
+
+.icon-links a{
+  display:flex !important;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-width:112px;
+  min-height:86px;
+  padding:12px 16px !important;
+}
+.icon-links img{
+  width:30px;
+  height:30px;
+  object-fit:contain;
+  filter:drop-shadow(0 0 10px rgba(120,230,255,.35));
+}
+
+.hero-visual{
+  min-height:640px !important;
+}
+.hero-visual::before{
+  width:min(540px,40vw) !important;
+  height:min(540px,40vw) !important;
+}
+.hero-orca{
+  max-height:650px !important;
+  transform:scale(1.12);
+  transition:.35s ease;
+}
+.hero-orca.switching{
+  opacity:.25;
+  transform:scale(1.08) translateY(6px);
+}
+.costume-buttons button.active{
+  background:rgba(20,150,220,.78) !important;
+  box-shadow:0 0 24px rgba(0,220,255,.35);
+}
+
+.protected-img,
+.no-save,
+.gallery-item img,
+.goods-image img,
+.unit-card img,
+.movie-card img,
+.hero-orca{
+  -webkit-user-drag:none;
+  user-drag:none;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-touch-callout:none;
+}
+
+.gallery-wrap{
+  user-select:none;
+}
+.gallery-track{
+  overflow-x:auto !important;
+  scrollbar-width:none;
+}
+.gallery-track::-webkit-scrollbar{
+  display:none;
+}
+.gallery-item{
+  flex:0 0 calc(50% - 7px) !important;
+}
+.gallery-item::after{
+  content:"© SHIROKURO ORCA";
+  position:absolute;
+  right:8px;
+  top:8px;
+  padding:4px 8px;
+  border-radius:999px;
+  background:rgba(0,8,20,.62);
+  color:rgba(255,255,255,.82);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.06em;
+  pointer-events:none;
+}
+
+@media(max-width:980px){
+  .hero-visual{min-height:460px !important;}
+  .hero-orca{max-height:440px !important;transform:scale(1.05);}
+  .cursor-light{display:none;}
+}

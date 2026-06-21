@@ -19,3 +19,43 @@ document.querySelectorAll("#gallery img").forEach(img=>{
   img.addEventListener("contextmenu", e => e.preventDefault());
   img.setAttribute("draggable","false");
 });
+
+
+// V26 cursor light
+const cursorLight = document.querySelector(".cursor-light");
+window.addEventListener("pointermove", (e) => {
+  if (!cursorLight) return;
+  cursorLight.style.left = e.clientX + "px";
+  cursorLight.style.top = e.clientY + "px";
+});
+
+// V26 costume switch
+const heroOrca = document.getElementById("heroOrca");
+document.querySelectorAll(".costume-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (!heroOrca) return;
+    document.querySelectorAll(".costume-btn").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    heroOrca.classList.add("switching");
+    setTimeout(() => {
+      heroOrca.src = btn.dataset.src;
+      heroOrca.classList.remove("switching");
+    }, 180);
+  });
+});
+
+// V26 stronger casual save deterrent
+document.addEventListener("contextmenu", (e) => {
+  if (e.target.closest("img, .gallery-item, .goods-card, .unit-card, .movie-card")) {
+    e.preventDefault();
+  }
+});
+document.addEventListener("dragstart", (e) => {
+  if (e.target.closest("img")) e.preventDefault();
+});
+document.addEventListener("selectstart", (e) => {
+  if (e.target.closest("#gallery, #goods, #unit, #movies, .hero-visual")) e.preventDefault();
+});
+document.querySelectorAll("img").forEach(img => {
+  img.setAttribute("draggable", "false");
+});

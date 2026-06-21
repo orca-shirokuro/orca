@@ -11,10 +11,11 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="cursor-light" aria-hidden="true"></div>
 
 <header class="site-header">
   <a href="#home" class="brand">
-    <img src="assets/logo.png" alt="SHIROKURO ORCA" onerror="this.style.display='none'">
+    <img class="protected-img" src="assets/logo.png" alt="SHIROKURO ORCA" onerror="this.style.display='none'">
     <span>
       <strong>SHIROKURO</strong>
       <small>ORCA OFFICIAL WEBSITE</small>
@@ -50,20 +51,20 @@
         <time>21:00</time>
       </div>
 
-      <div class="hero-links">
-        <a href="https://web.iriam.app/s/user/uZA10hNF3G?uuid=45efcd5b" target="_blank" rel="noopener">IRIAM</a>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://x.com/orca_whiteblack" target="_blank" rel="noopener">X</a>
-        <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a>
-        <a href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">GOODS</a>
+      <div class="hero-links icon-links">
+        <a href="https://web.iriam.app/s/user/uZA10hNF3G?uuid=45efcd5b" target="_blank" rel="noopener"><img class="protected-img" src="assets/icons/iriam.svg" alt="">IRIAM</a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener"><img class="protected-img" src="assets/icons/youtube.svg" alt="">YouTube</a>
+        <a href="https://x.com/orca_whiteblack" target="_blank" rel="noopener"><img class="protected-img" src="assets/icons/x.svg" alt="">X</a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener"><img class="protected-img" src="assets/icons/tiktok.svg" alt="">TikTok</a>
+        <a href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener"><img class="protected-img" src="assets/icons/suzuri.svg" alt="">GOODS</a>
       </div>
     </div>
 
     <div class="hero-visual">
-      <img class="hero-orca" src="assets/orca.png" alt="白黒オルカ立ち絵">
+      <img id="heroOrca" class="hero-orca protected-img" src="assets/orca.png" alt="白黒オルカ立ち絵" draggable="false">
       <div class="costume-buttons">
-        <button type="button">通常衣装</button>
-        <button type="button">黒スーツ</button>
+        <button class="costume-btn active" type="button" data-src="assets/orca.png">通常衣装</button>
+        <button class="costume-btn" type="button" data-src="assets/orca-formal.png">黒スーツ</button>
       </div>
     </div>
   </section>
@@ -111,15 +112,15 @@
     <article id="unit" class="panel unit-panel">
       <h2>UNIT <small>Collaboration</small></h2>
       <div class="unit-card">
-        <img class="unit-logo" src="assets/unit/zeto-luka-logo.png" alt="ゼト×ルカ学習帳">
+        <img class="unit-logo protected-img" src="assets/unit/zeto-luka-logo.png" alt="ゼト×ルカ学習帳">
         <div class="unit-members">
           <figure class="member red">
-            <img src="assets/unit/zetton.png" alt="ゼットン">
+            <img class="protected-img" src="assets/unit/zetton.png" alt="ゼットン">
             <figcaption>ZETTON</figcaption>
           </figure>
           <span class="cross">×</span>
           <figure class="member blue">
-            <img src="assets/orca.png" alt="白黒オルカ">
+            <img class="protected-img" src="assets/orca.png" alt="白黒オルカ">
             <figcaption>SHIROKURO ORCA</figcaption>
           </figure>
         </div>
@@ -150,14 +151,27 @@
       <div class="gallery-wrap">
         <button class="slide prev" type="button">‹</button>
         <div class="gallery-track">
-          <figure class="gallery-item official"><img src="assets/orca.png" alt="白黒オルカ立ち絵"><figcaption>公式立ち絵</figcaption></figure>
-          <figure class="gallery-item official"><img src="assets/orca-formal.png" alt="白黒オルカ黒スーツ"><figcaption>公式立ち絵</figcaption></figure>
-          <figure class="gallery-item chii"><img src="assets/gallery/chibi-orca-hood.png" alt="ミニキャラ"><figcaption>ちーぺん。</figcaption></figure>
-          <figure class="gallery-item chii"><img src="assets/gallery/chibi-flower.png" alt="ミニキャラ"><figcaption>ちーぺん。</figcaption></figure>
-          <figure class="gallery-item chii"><img src="assets/gallery/chibi-balloon.png" alt="ミニキャラ"><figcaption>ちーぺん。</figcaption></figure>
-          <figure class="gallery-item mascot"><img src="assets/gallery/mascot-orca-summer.png" alt="マスコット"><figcaption>マスコット</figcaption></figure>
-          <figure class="gallery-item mascot"><img src="assets/gallery/mascot-orca-pair.png" alt="マスコット"><figcaption>マスコット</figcaption></figure>
-        </div>
+          <figure class="gallery-item official"><img class="protected-img" src="assets/orca.png" alt="白黒オルカ立ち絵" draggable="false"><figcaption>公式立ち絵</figcaption></figure>
+          <figure class="gallery-item official"><img class="protected-img" src="assets/orca-formal.png" alt="白黒オルカ黒スーツ" draggable="false"><figcaption>公式立ち絵</figcaption></figure>
+          <figure class="gallery-item chii"><img class="protected-img" src="assets/gallery/chibi-orca-hood.png" alt="ちーぺん。" draggable="false"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item chii"><img class="protected-img" src="assets/gallery/chibi-flower.png" alt="ちーぺん。" draggable="false"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item chii"><img class="protected-img" src="assets/gallery/chibi-balloon.png" alt="ちーぺん。" draggable="false"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item chii"><img class="protected-img" src="assets/gallery/chibi-wasou.png" alt="ちーぺん。" draggable="false"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item chii"><img class="protected-img" src="assets/gallery/chibi-rain-green.png" alt="ちーぺん。" draggable="false"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item chii"><img class="protected-img" src="assets/gallery/chibi-rain-pink.png" alt="ちーぺん。" draggable="false"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item chii"><img class="protected-img" src="assets/gallery/chibi-rain-yellow.png" alt="ちーぺん。" draggable="false"><figcaption>ちーぺん。</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mascot-orca-summer.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mascot-orca-pair.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mini-01.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mini-02.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mini-03.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mini-04.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mini-05.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mini-06.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mini-07.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mini-08.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+          <figure class="gallery-item mascot"><img class="protected-img" src="assets/gallery/mini-09.png" alt="マスコット" draggable="false"><figcaption>マスコット</figcaption></figure>
+</div>
         <button class="slide next" type="button">›</button>
       </div>
       <p class="note">© SHIROKURO ORCA</p>
@@ -166,9 +180,9 @@
     <article id="movies" class="panel">
       <h2>MOVIES <small>YouTube / Coming Soon</small></h2>
       <div class="movie-grid">
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="movie-card"><img src="assets/deep-orca.svg" alt=""><span>▶</span><strong>First Movie</strong><small>COMING SOON / --:--</small></a>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="movie-card"><img src="assets/orca.png" alt=""><span>▶</span><strong>Game Stream</strong><small>COMING SOON / --:--</small></a>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="movie-card"><img src="assets/logo.png" alt=""><span>▶</span><strong>Talk Stream</strong><small>COMING SOON / --:--</small></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="movie-card"><img class="protected-img" src="assets/deep-orca.svg" alt=""><span>▶</span><strong>First Movie</strong><small>COMING SOON / --:--</small></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="movie-card"><img class="protected-img" src="assets/orca.png" alt=""><span>▶</span><strong>Game Stream</strong><small>COMING SOON / --:--</small></a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener" class="movie-card"><img class="protected-img" src="assets/logo.png" alt=""><span>▶</span><strong>Talk Stream</strong><small>COMING SOON / --:--</small></a>
       </div>
       <a class="btn" href="https://www.youtube.com/" target="_blank" rel="noopener">YouTubeへ</a>
     </article>
@@ -177,12 +191,12 @@
       <h2>OFFICIAL GOODS <small>SUZURI</small></h2>
       <div class="goods-card">
         <div class="goods-copy">
-          <img src="assets/goods/suzuri-logo-white.png" alt="SUZURI" onerror="this.style.display='none'">
+          <img class="protected-img" src="assets/goods/suzuri-logo-white.png" alt="SUZURI" onerror="this.style.display='none'">
           <h3>白黒オルカ<br>公式グッズ発売中！</h3>
           <a class="btn" href="https://suzuri.jp/orca_White_Black" target="_blank" rel="noopener">SHOPへ</a>
         </div>
         <div class="goods-image">
-          <img src="assets/goods/suzuri-products.png" alt="白黒オルカ公式グッズ">
+          <img class="protected-img" src="assets/goods/suzuri-products.png" alt="白黒オルカ公式グッズ">
         </div>
       </div>
     </article>
@@ -203,7 +217,7 @@
 </main>
 
 <footer class="footer">
-  <img src="assets/logo.png" alt="" onerror="this.style.display='none'">
+  <img class="protected-img" src="assets/logo.png" alt="" onerror="this.style.display='none'">
   <strong>SHIROKURO ORCA</strong>
   <nav>
     <a href="https://web.iriam.app/s/user/uZA10hNF3G?uuid=45efcd5b" target="_blank" rel="noopener">IRIAM</a>
