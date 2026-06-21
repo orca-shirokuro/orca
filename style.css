@@ -2505,3 +2505,316 @@ main,
     grid-template-columns:1fr !important;
   }
 }
+
+
+/* ===== V23 GRID REBUILD / ALIGN FIX ===== */
+
+/* ここでカード配置を完全固定する */
+section.grid{
+  width:min(1260px,94vw) !important;
+  margin:0 auto 40px !important;
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important;
+  gap:18px !important;
+  align-items:start !important;
+}
+
+/* 既存の .wide, .goods 指定を打ち消して、全カードを綺麗に並べる */
+section.grid > *{
+  grid-column:auto !important;
+  width:100% !important;
+  max-width:100% !important;
+  box-sizing:border-box !important;
+}
+
+section.grid > #news{ grid-column:1 !important; grid-row:1 !important; }
+section.grid > #schedule{ grid-column:2 !important; grid-row:1 !important; }
+
+section.grid > #profile{ grid-column:1 !important; grid-row:2 !important; }
+section.grid > #unit{ grid-column:2 !important; grid-row:2 !important; }
+
+section.grid > #fan{ grid-column:1 !important; grid-row:3 !important; }
+section.grid > #gallery{ grid-column:2 !important; grid-row:3 !important; }
+
+section.grid > #movies{ grid-column:1 !important; grid-row:4 !important; }
+section.grid > #goods{ grid-column:2 !important; grid-row:4 !important; }
+
+section.grid > #sns{
+  grid-column:1 / -1 !important;
+  grid-row:5 !important;
+}
+
+/* 高さを揃える */
+section.grid > #news,
+section.grid > #schedule{
+  min-height:360px !important;
+}
+
+section.grid > #profile,
+section.grid > #unit{
+  min-height:420px !important;
+}
+
+section.grid > #fan,
+section.grid > #gallery{
+  min-height:430px !important;
+}
+
+section.grid > #movies,
+section.grid > #goods{
+  min-height:410px !important;
+}
+
+/* PROFILEの横幅崩れ防止 */
+#profile .profile{
+  grid-template-columns:minmax(0,1fr) minmax(260px,.9fr) !important;
+  gap:20px !important;
+}
+
+#profile .profile > *{
+  min-width:0 !important;
+}
+
+/* UNITを半幅カード用に再調整 */
+#unit .unit-card{
+  min-height:330px !important;
+  padding:18px !important;
+  border-radius:24px !important;
+}
+
+#unit .unit-card::before{
+  font-size:42px !important;
+  right:16px !important;
+  top:12px !important;
+}
+
+#unit .unit-logo-wrap{
+  margin:0 auto 8px !important;
+  padding:2px !important;
+}
+
+#unit .unit-logo{
+  width:min(100%, 360px) !important;
+  max-height:95px !important;
+}
+
+#unit .unit-members{
+  grid-template-columns:1fr 42px 1fr !important;
+  gap:10px !important;
+  align-items:center !important;
+}
+
+#unit .unit-member{
+  min-height:200px !important;
+  height:200px !important;
+}
+
+#unit .unit-member img{
+  max-height:192px !important;
+  max-width:88% !important;
+}
+
+#unit .unit-cross{
+  font-size:34px !important;
+}
+
+#unit .unit-copy{
+  margin:10px auto 0 !important;
+  font-size:13px !important;
+  line-height:1.6 !important;
+}
+
+/* GALLERYの高さ調整 */
+#gallery .gallery-slider-wrap{
+  min-height:260px !important;
+}
+
+/* MOVIESのカードを半幅内で収める */
+#movies .movies{
+  display:grid !important;
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:12px !important;
+}
+
+#movies .movie-card{
+  min-width:0 !important;
+}
+
+/* GOODS V23：半幅でも崩れない縦型カード */
+#goods .goods-v23{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:14px !important;
+  padding:18px !important;
+  border:1px solid rgba(120,220,255,.30);
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 50% 70%, rgba(130,230,255,.16), transparent 38%),
+    linear-gradient(135deg, rgba(0,42,82,.55), rgba(0,8,24,.82));
+  box-shadow:
+    0 0 38px rgba(0,190,255,.18),
+    inset 0 0 32px rgba(0,200,255,.07);
+  overflow:hidden !important;
+}
+
+#goods .goods-v23::before{
+  content:"GOODS";
+  position:absolute;
+  right:16px;
+  top:8px;
+  font-family:Cinzel,serif;
+  font-size:70px;
+  font-weight:900;
+  letter-spacing:.10em;
+  color:rgba(255,255,255,.035);
+  pointer-events:none;
+}
+
+#goods .goods-v23-head{
+  position:relative;
+  z-index:3;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+  padding:16px !important;
+  border:1px solid rgba(120,220,255,.24);
+  border-radius:18px;
+  background:rgba(0,18,42,.50);
+  text-align:center !important;
+}
+
+#goods .goods-v23-head .suzuri-logo-main{
+  width:170px !important;
+  max-width:70% !important;
+  height:auto !important;
+  margin:0 !important;
+  display:block !important;
+  filter:drop-shadow(0 0 14px rgba(0,220,255,.42)) !important;
+}
+
+#goods .goods-v23-head h3{
+  margin:0 !important;
+  color:#fff !important;
+  font-size:clamp(24px,2.4vw,34px) !important;
+  line-height:1.22 !important;
+  letter-spacing:.04em !important;
+  white-space:normal !important;
+  writing-mode:horizontal-tb !important;
+  word-break:keep-all !important;
+  overflow-wrap:normal !important;
+  text-align:center !important;
+  text-shadow:0 0 18px rgba(0,210,255,.38) !important;
+}
+
+#goods .goods-v23-head .suzuri-shop-btn{
+  width:150px !important;
+  height:44px !important;
+  margin:4px auto 0 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  border-radius:999px !important;
+  font-size:14px !important;
+  font-weight:900 !important;
+  letter-spacing:.08em !important;
+  box-shadow:0 0 24px rgba(0,210,255,.22) !important;
+}
+
+#goods .goods-v23-image{
+  position:relative;
+  z-index:2;
+  display:grid !important;
+  place-items:center !important;
+  height:200px !important;
+  padding:12px !important;
+  border:1px solid rgba(120,220,255,.25);
+  border-radius:20px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(150,235,255,.14), transparent 50%),
+    rgba(0,12,30,.42);
+  overflow:hidden !important;
+}
+
+#goods .goods-v23-image img{
+  position:relative;
+  z-index:2;
+  width:100% !important;
+  max-width:560px !important;
+  max-height:180px !important;
+  object-fit:contain !important;
+  border-radius:16px !important;
+  transform:none !important;
+  filter:
+    drop-shadow(0 14px 28px rgba(0,0,0,.38))
+    drop-shadow(0 0 20px rgba(0,200,255,.14)) !important;
+  transition:.3s ease !important;
+}
+
+#goods .goods-v23-image:hover img{
+  transform:scale(1.03) !important;
+}
+
+/* 古いGOODSパーツを完全非表示 */
+#goods .goods-badge,
+#goods .goods-tags,
+#goods .goods-hero-card,
+#goods .goods-clean-copy,
+#goods .goods-unified,
+#goods .goods-product-stage,
+#goods .goods-unified-text,
+#goods .goods-unified-image,
+#goods .goods-banner,
+#goods .goods-wide,
+#goods .goods-final,
+#goods .goods-v22{
+  display:none !important;
+}
+
+/* FOLLOW MEを最下段フル幅に */
+#sns.sns-panel{
+  text-align:center !important;
+  min-height:auto !important;
+}
+
+#sns .sns-hub{
+  padding:24px !important;
+}
+
+#sns .sns-links{
+  display:flex !important;
+  justify-content:center !important;
+  flex-wrap:wrap !important;
+  gap:12px !important;
+}
+
+/* スマホは1列 */
+@media(max-width:900px){
+  section.grid{
+    display:block !important;
+  }
+
+  section.grid > *{
+    margin-bottom:18px !important;
+  }
+
+  #profile .profile{
+    grid-template-columns:1fr !important;
+  }
+
+  #movies .movies{
+    grid-template-columns:1fr !important;
+  }
+
+  #unit .unit-members{
+    grid-template-columns:1fr !important;
+  }
+
+  #goods .goods-v23-image{
+    height:auto !important;
+    min-height:210px !important;
+  }
+}
