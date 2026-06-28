@@ -1326,3 +1326,24 @@ h1{
 .counter-box span{color:#b7d9e8;font-weight:900}.counter-box strong{display:block;font-family:Cinzel,serif;font-size:42px;color:#fff;text-shadow:0 0 10px rgba(255,255,255,.5),0 0 24px rgba(142,238,255,.42)}.counter-note{margin:14px 0 0;color:#b7d9e8;font-weight:800}
 .firework{position:fixed;width:8px;height:8px;border-radius:50%;pointer-events:none;z-index:10001;background:#fff;box-shadow:0 0 18px #8eeeff;animation:firework .9s ease-out forwards}@keyframes firework{0%{transform:translate(-50%,-50%) scale(.3);opacity:1}100%{transform:translate(calc(-50% + var(--fx)),calc(-50% + var(--fy))) scale(1.4);opacity:0}}
 @media(max-width:980px){.kit-grid{grid-template-columns:1fr}.counter-box{grid-template-columns:1fr}}
+
+/* ===== V36 SLIDER + COUNTER TOP ===== */
+.aquarium-counter-top{width:min(1260px,94vw);margin:-18px auto 28px;position:relative;z-index:8}
+.counter-mini{display:grid;grid-template-columns:auto 1fr 1fr;gap:14px;align-items:center;padding:14px 18px;border:1px solid rgba(142,238,255,.34);border-radius:18px;background:radial-gradient(circle at 20% 50%,rgba(142,238,255,.15),transparent 42%),linear-gradient(135deg,rgba(0,34,70,.64),rgba(0,10,26,.76));box-shadow:0 0 22px rgba(0,190,255,.14),inset 0 0 24px rgba(142,238,255,.06)}
+.counter-mini div{display:flex;align-items:center;justify-content:center;gap:12px;min-height:56px;border:1px solid rgba(142,238,255,.18);border-radius:14px;background:rgba(0,16,36,.46)}
+.counter-mini p{margin:0;color:#8eeeff;font-weight:900;letter-spacing:.12em;white-space:nowrap}
+.counter-mini span{color:#b7d9e8;font-size:12px;font-weight:900;letter-spacing:.08em}
+.counter-mini strong{font-family:Cinzel,serif;color:#fff;font-size:32px;letter-spacing:.08em;text-shadow:0 0 10px rgba(255,255,255,.48),0 0 22px rgba(142,238,255,.38)}
+
+.kit-section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:18px}
+.kit-section-head .kit-heading{margin:0}
+.kit-controls{display:flex;gap:8px}
+.kit-controls button{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(142,238,255,.42);background:rgba(0,28,60,.72);color:#fff;font-size:26px;line-height:1;cursor:pointer;box-shadow:0 0 14px rgba(0,190,255,.12);transition:.22s ease}
+.kit-controls button:hover{transform:translateY(-2px);border-color:rgba(142,238,255,.78);box-shadow:0 0 22px rgba(142,238,255,.28)}
+.kit-slider{display:flex!important;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;scrollbar-width:none;padding:4px 2px 12px;margin-top:12px;scroll-snap-type:x mandatory}
+.kit-slider::-webkit-scrollbar{display:none}
+.kit-slider .kit-card{flex:0 0 min(270px,78vw);min-height:250px;scroll-snap-align:start}
+.special-panel .kit-slider .kit-card,.zetoluka-gallery-panel .kit-slider .kit-card{flex-basis:min(300px,78vw)}
+.kit-grid.kit-slider{grid-template-columns:none!important}
+.fankit-panel,.special-panel,.zetoluka-gallery-panel{min-height:auto!important}
+@media(max-width:980px){.aquarium-counter-top{margin:8px auto 22px}.counter-mini{grid-template-columns:1fr;text-align:center}.counter-mini p{order:-1}.kit-slider .kit-card{flex-basis:82vw}}

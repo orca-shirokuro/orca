@@ -225,3 +225,14 @@ async function addChipenExtra(){const extra=await loadJson("data/chipen_extra.js
 function initAquariumCounter(){const t=document.getElementById("todayVisitors"),l=document.getElementById("localVisitors");if(!t||!l)return;const day=new Date().toISOString().slice(0,10),tk=`orca_today_${day}`,lk="orca_local_visits";let tc=Number(localStorage.getItem(tk)||0)+1,lc=Number(localStorage.getItem(lk)||0)+1;localStorage.setItem(tk,tc);localStorage.setItem(lk,lc);t.textContent=String(tc).padStart(3,"0");l.textContent=String(lc).padStart(4,"0");if([10,50,77,100,111,222,500,777,1000].includes(lc))launchKiriban(lc)}
 function launchKiriban(n){for(let i=0;i<46;i++){const f=document.createElement("span");f.className="firework";f.style.left=(20+Math.random()*60)+"vw";f.style.top=(18+Math.random()*45)+"vh";f.style.setProperty("--fx",(Math.random()*220-110)+"px");f.style.setProperty("--fy",(Math.random()*220-110)+"px");document.body.appendChild(f);setTimeout(()=>f.remove(),950)}const m=document.createElement("div");m.textContent=`🎉 ${n}回目のご来館！`;m.style.cssText="position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:10002;padding:20px 28px;border-radius:18px;background:rgba(0,10,26,.88);color:#fff;font-weight:900;border:1px solid rgba(142,238,255,.65);box-shadow:0 0 40px rgba(0,200,255,.28)";document.body.appendChild(m);setTimeout(()=>m.remove(),2400)}
 loadFanKit();addChipenExtra();initAquariumCounter();
+
+// ===== V36 FAN KIT HORIZONTAL SLIDER =====
+document.addEventListener("click",(e)=>{
+  const btn=e.target.closest(".kit-prev,.kit-next");
+  if(!btn)return;
+  const slider=document.getElementById(btn.dataset.target);
+  if(!slider)return;
+  const dir=btn.classList.contains("kit-next")?1:-1;
+  slider.scrollBy({left:Math.min(320,slider.clientWidth*.82)*dir,behavior:"smooth"});
+});
+setTimeout(()=>["ringGallery","collabDownloads","specialCollection","zetolukaGalleryGrid"].forEach(id=>document.getElementById(id)?.classList.add("kit-slider")),300);

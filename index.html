@@ -70,6 +70,15 @@
     </div>
   </section>
 
+  
+  <section id="counter" class="aquarium-counter-top">
+    <div class="counter-mini">
+      <p>🐋 Orca Aquarium</p>
+      <div><span>本日のご来館</span><strong id="todayVisitors">--</strong></div>
+      <div><span>この端末の入館回数</span><strong id="localVisitors">--</strong></div>
+    </div>
+  </section>
+
   <section class="section-grid">
 
     <article id="news" class="panel">
@@ -169,32 +178,31 @@
       <p class="note">© SHIROKURO ORCA</p>
     </article>
 
+    
     <article id="fankit" class="panel fankit-panel">
       <h2>FAN KIT <small>Free Download</small></h2>
       <p class="kit-lead">SNS・IRIAM・Xなどで使える公式フリー素材です。</p>
-      <h3 class="kit-heading">ICON FRAME</h3>
-      <div id="ringGallery" class="kit-grid"></div>
-      <h3 class="kit-heading">COLLABORATION</h3>
-      <div id="collabDownloads" class="kit-grid"></div>
+      <div class="kit-section-head"><h3 class="kit-heading">ICON FRAME</h3><div class="kit-controls"><button class="kit-prev" data-target="ringGallery" type="button">‹</button><button class="kit-next" data-target="ringGallery" type="button">›</button></div></div>
+      <div id="ringGallery" class="kit-slider"></div>
+      <div class="kit-section-head"><h3 class="kit-heading">COLLABORATION</h3><div class="kit-controls"><button class="kit-prev" data-target="collabDownloads" type="button">‹</button><button class="kit-next" data-target="collabDownloads" type="button">›</button></div></div>
+      <div id="collabDownloads" class="kit-slider"></div>
       <div class="kit-rules"><strong>利用について</strong><span>アイコン利用OK / SNS利用OK / 加工OK</span><span>再配布NG / 商用利用NG / 自作発言NG</span></div>
     </article>
 
+    
     <article id="special" class="panel special-panel">
       <h2>SPECIAL COLLECTION <small>Limited</small></h2>
       <p class="kit-lead">獲得条件がある限定アイテムです。こちらはダウンロードできません。</p>
-      <div id="specialCollection" class="kit-grid locked-grid"></div>
+      <div class="kit-section-head"><h3 class="kit-heading">LIMITED ITEMS</h3><div class="kit-controls"><button class="kit-prev" data-target="specialCollection" type="button">‹</button><button class="kit-next" data-target="specialCollection" type="button">›</button></div></div>
+      <div id="specialCollection" class="kit-slider locked-grid"></div>
     </article>
 
+    
     <article id="zetolukaGallery" class="panel zetoluka-gallery-panel">
       <h2>ZETO×LUKA GALLERY <small>View Only</small></h2>
       <p class="kit-lead">ゼト×ルカ学習帳のコレクションギャラリーです。保存・転載は禁止です。</p>
-      <div id="zetolukaGalleryGrid" class="kit-grid locked-grid"></div>
-    </article>
-
-    <article id="counter" class="panel counter-panel">
-      <h2>ORCA AQUARIUM <small>入館カウンター</small></h2>
-      <div class="counter-box"><span>本日のご来館</span><strong id="todayVisitors">--</strong><span>この端末の入館回数</span><strong id="localVisitors">--</strong></div>
-      <p class="counter-note">キリ番を踏むと、泡と花火の演出が出るかも。</p>
+      <div class="kit-section-head"><h3 class="kit-heading">COLLAB GALLERY</h3><div class="kit-controls"><button class="kit-prev" data-target="zetolukaGalleryGrid" type="button">‹</button><button class="kit-next" data-target="zetolukaGalleryGrid" type="button">›</button></div></div>
+      <div id="zetolukaGalleryGrid" class="kit-slider locked-grid"></div>
     </article>
 
 
