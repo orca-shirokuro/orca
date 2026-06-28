@@ -1,0 +1,45 @@
+{
+  "note": "weightを大きくすると出やすくなります。0にすると出ません。",
+  "effects": [
+    {
+      "id": "bubble",
+      "label": "泡",
+      "weight": 60
+    },
+    {
+      "id": "neon",
+      "label": "ネオン",
+      "weight": 20
+    },
+    {
+      "id": "splash",
+      "label": "水しぶき",
+      "weight": 10
+    },
+    {
+      "id": "orca",
+      "label": "シャチ横切り",
+      "weight": 5
+    },
+    {
+      "id": "chipen",
+      "label": "ちーぺん横切り",
+      "weight": 3
+    },
+    {
+      "id": "zetton",
+      "label": "ゼットン赤煙",
+      "weight": 1
+    },
+    {
+      "id": "gold_orca",
+      "label": "金シャチ",
+      "weight": 0.9
+    },
+    {
+      "id": "deep_secret",
+      "label": "深海シークレット",
+      "weight": 0.1
+    }
+  ]
+}

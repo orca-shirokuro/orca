@@ -236,3 +236,22 @@ document.addEventListener("click",(e)=>{
   slider.scrollBy({left:Math.min(320,slider.clientWidth*.82)*dir,behavior:"smooth"});
 });
 setTimeout(()=>["ringGallery","collabDownloads","specialCollection","zetolukaGalleryGrid"].forEach(id=>document.getElementById(id)?.classList.add("kit-slider")),300);
+
+// ===== V37 RANDOM SLIDE EFFECTS + DOWNLOAD RULES =====
+let v37EffectConfig=null;
+fetch("data/effects.json",{cache:"no-store"}).then(r=>r.ok?r.json():null).then(j=>{v37EffectConfig=j}).catch(()=>{});
+function chooseWeightedEffect(){const fallback=[{id:"bubble",weight:60},{id:"neon",weight:20},{id:"splash",weight:10},{id:"orca",weight:5},{id:"chipen",weight:3},{id:"zetton",weight:1},{id:"gold_orca",weight:.9},{id:"deep_secret",weight:.1}];const list=(v37EffectConfig&&v37EffectConfig.effects)||fallback;const total=list.reduce((s,i)=>s+Number(i.weight||0),0);let r=Math.random()*total;for(const i of list){r-=Number(i.weight||0);if(r<=0)return i.id}return"bubble"}
+function playSlideEffect(){const e=chooseWeightedEffect();({bubble:fxBubbles,neon:fxNeon,splash:fxSplash,orca:()=>fxSwim("🐋"),chipen:()=>fxSwim("🐧"),zetton:fxSmoke,gold_orca:fxGoldOrca,deep_secret:fxDeepSecret}[e]||fxBubbles)()}
+function fxBubbles(){for(let i=0;i<18;i++){const b=document.createElement("span");b.className="slide-fx fx-bubble";b.style.left=(20+Math.random()*60)+"vw";b.style.top=(38+Math.random()*42)+"vh";b.style.width=b.style.height=(6+Math.random()*12)+"px";b.style.setProperty("--fx",(Math.random()*90-45)+"px");b.style.setProperty("--fy",(-40-Math.random()*100)+"px");document.body.appendChild(b);setTimeout(()=>b.remove(),1100)}}
+function fxNeon(){const n=document.createElement("div");n.className="neon-sweep";document.body.appendChild(n);setTimeout(()=>n.remove(),850)}
+function fxSplash(){for(let i=0;i<20;i++){const s=document.createElement("span");s.className="slide-fx fx-splash";s.style.left=(15+Math.random()*70)+"vw";s.style.top=(45+Math.random()*25)+"vh";s.style.setProperty("--fx",(Math.random()*160-80)+"px");s.style.setProperty("--fy",(-20-Math.random()*70)+"px");document.body.appendChild(s);setTimeout(()=>s.remove(),750)}}
+function fxSwim(icon){const s=document.createElement("div");s.className="fx-swim";s.textContent=icon;s.style.setProperty("--top",(30+Math.random()*45)+"vh");document.body.appendChild(s);setTimeout(()=>s.remove(),1200)}
+function fxSmoke(){for(let i=0;i<14;i++){const sm=document.createElement("span");sm.className="fx-smoke";sm.style.left=(25+Math.random()*50)+"vw";sm.style.top=(40+Math.random()*30)+"vh";sm.style.setProperty("--fx",(Math.random()*120-60)+"px");sm.style.setProperty("--fy",(-20-Math.random()*90)+"px");document.body.appendChild(sm);setTimeout(()=>sm.remove(),1050)}}
+function fxGoldOrca(){fxSwim("✨🐋✨");const msg=document.createElement("div");msg.className="lucky-orca";msg.innerHTML="Lucky Orca!!";document.body.appendChild(msg);setTimeout(()=>msg.remove(),1700)}
+function fxDeepSecret(){const d=document.createElement("div");d.className="deep-secret";d.innerHTML="<div>深海から…<strong>ORCA</strong>ありがとう。</div>";document.body.appendChild(d);setTimeout(()=>d.remove(),2500);setTimeout(()=>fxBubbles(),250)}
+document.addEventListener("click",e=>{if(e.target.closest(".kit-prev,.kit-next,.slide.prev,.slide.next"))playSlideEffect()});
+function applyDownloadRules(){document.querySelectorAll(".kit-card").forEach(card=>{const ok=!!card.querySelector("a[download]");card.classList.toggle("can-download",ok);card.classList.toggle("no-download",!ok)});document.querySelectorAll(".no-download img,.locked-card img,#gallery img,#zetolukaGallery img,#special img").forEach(img=>img.setAttribute("draggable","false"))}
+document.addEventListener("contextmenu",e=>{const ok=e.target.closest(".can-download,a[download]");const prot=e.target.closest("#gallery,#zetolukaGallery,#special,.no-download,.locked-card,img");if(prot&&!ok)e.preventDefault()},true);
+document.addEventListener("dragstart",e=>{if(e.target.closest("img")&&!e.target.closest(".can-download,a[download]"))e.preventDefault()},true);
+document.addEventListener("selectstart",e=>{if(e.target.closest("#gallery,#zetolukaGallery,#special,.no-download,.locked-card"))e.preventDefault()},true);
+setInterval(applyDownloadRules,800);setTimeout(applyDownloadRules,600);
