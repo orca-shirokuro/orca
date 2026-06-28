@@ -1,0 +1,26 @@
+[
+  {
+    "title": "VIP Member Card",
+    "status": "配布終了",
+    "image": "assets/special/vip-member-card.png",
+    "download": false
+  },
+  {
+    "title": "オルカの飼育員さん",
+    "status": "配布終了",
+    "image": "assets/special/keeper-card.png",
+    "download": false
+  },
+  {
+    "title": "PREMIUM VIP",
+    "status": "獲得条件あり",
+    "image": "assets/special/premium-vip.png",
+    "download": false
+  },
+  {
+    "title": "White Day",
+    "status": "配布終了",
+    "image": "assets/special/white-day.png",
+    "download": false
+  }
+]

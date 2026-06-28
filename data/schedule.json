@@ -10,35 +10,35 @@
     "day": "TUE",
     "date": "06/25",
     "time": "22:00",
-    "title": "更新中",
+    "title": "ゲーム配信",
     "type": "game"
   },
   {
     "day": "WED",
     "date": "06/26",
     "time": "21:00",
-    "title": "更新中",
+    "title": "雑談配信",
     "type": "talk"
   },
   {
     "day": "THU",
     "date": "06/27",
     "time": "21:00",
-    "title": "更新中",
+    "title": "企画枠",
     "type": "event"
   },
   {
     "day": "FRI",
     "date": "06/28",
     "time": "22:00",
-    "title": "更新中",
+    "title": "ゲーム配信",
     "type": "game"
   },
   {
     "day": "SAT",
     "date": "06/29",
     "time": "21:00",
-    "title": "更新中",
+    "title": "メイン配信",
     "type": "main"
   },
   {

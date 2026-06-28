@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Spring Frame",
+    "category": "季節フレーム",
+    "image": "assets/fankit/frames/spring-frame.png",
+    "download": true
+  },
+  {
+    "title": "Rainy Frame",
+    "category": "季節フレーム",
+    "image": "assets/fankit/frames/rainy-frame.png",
+    "download": true
+  },
+  {
+    "title": "Tanabata Frame",
+    "category": "季節フレーム",
+    "image": "assets/fankit/frames/tanabata-frame.png",
+    "download": true
+  },
+  {
+    "title": "Starlight Frame",
+    "category": "季節フレーム",
+    "image": "assets/fankit/frames/starlight-frame.png",
+    "download": true
+  }
+]

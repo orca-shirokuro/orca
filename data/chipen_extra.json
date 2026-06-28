@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Game",
+    "image": "assets/gallery/chipen/chipen-game.png",
+    "category": "chii"
+  },
+  {
+    "title": "Tanabata",
+    "image": "assets/gallery/chipen/chipen-tanabata.png",
+    "category": "chii"
+  },
+  {
+    "title": "Zetton",
+    "image": "assets/gallery/chipen/chipen-zetton.png",
+    "category": "chii"
+  }
+]
